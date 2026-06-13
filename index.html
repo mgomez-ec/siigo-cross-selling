@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:'Poppins',system-ui,-apple-system,sans-serif;background:#0B2A4A;-webkit-font-smoothing:antialiased;}
+  ::selection{background:#00ACFF;color:#072039;}
+  input[type=range]{-webkit-appearance:none;appearance:none;height:6px;border-radius:999px;background:rgba(255,255,255,.18);outline:none;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#00ACFF;border:3px solid #fff;cursor:pointer;box-shadow:0 2px 10px rgba(0,172,255,.5);}
+  input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#00ACFF;border:3px solid #fff;cursor:pointer;}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}}
+  .brand-mark{position:absolute;z-index:3;pointer-events:none;}
+  @media (max-width:1040px){.brand-mark{display:none;}}
+  @keyframes wmFloatA{0%{transform:translate(0,0)}50%{transform:translate(27px,-34px)}100%{transform:translate(0,0)}}
+  @keyframes wmFloatB{0%{transform:translate(0,0)}50%{transform:translate(-30px,25px)}100%{transform:translate(0,0)}}
+  @keyframes wmPulse{0%{transform:translate(0,0) scale(1)}50%{transform:translate(0,-19px) scale(1.09)}100%{transform:translate(0,0) scale(1)}}
+  @media (prefers-reduced-motion: reduce){[data-wm] *{animation:none !important;}}
+</style>
+</helmet>
+<div style="background:#0B2A4A;">
+
+<header style="position:sticky;top:0;z-index:60;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(7,32,57,.74);border-bottom:1px solid rgba(255,255,255,.08);">
+  <div style="max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:13px 24px;gap:20px;">
+    <nav style="display:flex;gap:22px;align-items:center;flex-wrap:wrap;">
+      <a href="#resumen" style="color:rgba(255,255,255,.82);font-size:13.5px;font-weight:600;text-decoration:none;transition:color .2s;" style-hover="color:#00ACFF;">Resumen</a>
+      <a href="#matematica" style="color:rgba(255,255,255,.82);font-size:13.5px;font-weight:600;text-decoration:none;transition:color .2s;" style-hover="color:#00ACFF;">Matemática</a>
+      <a href="#calculadora" style="color:rgba(255,255,255,.82);font-size:13.5px;font-weight:600;text-decoration:none;transition:color .2s;" style-hover="color:#00ACFF;">Calculadora</a>
+      <a href="#crosssell" style="color:rgba(255,255,255,.82);font-size:13.5px;font-weight:600;text-decoration:none;transition:color .2s;" style-hover="color:#00ACFF;">Cross-sell</a>
+      <a href="#equipo" style="color:rgba(255,255,255,.82);font-size:13.5px;font-weight:600;text-decoration:none;transition:color .2s;" style-hover="color:#00ACFF;">Equipo</a>
+      <a href="#roadmap" style="color:rgba(255,255,255,.82);font-size:13.5px;font-weight:600;text-decoration:none;transition:color .2s;" style-hover="color:#00ACFF;">Roadmap</a>
+    </nav>
+    <img src="siigo-logo-white.png" alt="Siigo" style="height:30px;width:auto;display:block;flex:none;">
+  </div>
+</header>
+
+<section style="position:relative;overflow:hidden;color:#fff;background:linear-gradient(100deg,#061d35 0%,rgba(6,29,53,.95) 25%,rgba(8,34,60,.64) 54%,rgba(7,32,57,.3) 100%),linear-gradient(0deg,rgba(6,29,53,.6) 0%,rgba(6,29,53,0) 32%),url('hero-home-office.png');background-size:cover;background-position:center right;">
+  <div style="position:absolute;top:-130px;right:-70px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle at 32% 32%,rgba(0,172,255,.30),rgba(0,172,255,0) 64%);filter:blur(6px);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-180px;left:-130px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(254,211,93,.13),rgba(254,211,93,0) 62%);pointer-events:none;"></div>
+  <div style="position:absolute;top:80px;left:44%;width:230px;height:230px;border-radius:50%;border:1.5px solid rgba(0,172,255,.28);pointer-events:none;"></div>
+  <div style="position:absolute;top:150px;left:50%;width:120px;height:120px;border-radius:50%;border:1.5px solid rgba(254,211,93,.22);pointer-events:none;"></div>
+  <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.12) 1.4px,transparent 1.4px);background-size:26px 26px;opacity:.55;pointer-events:none;-webkit-mask-image:linear-gradient(95deg,transparent,#000 55%);mask-image:linear-gradient(95deg,transparent,#000 55%);"></div>
+
+  <img class="brand-mark" data-logo src="siigo-logo-azul.png" alt="Siigo" style="top:132px;right:5.5vw;width:clamp(230px,24vw,380px);height:auto;filter:drop-shadow(0 8px 26px rgba(0,0,0,.35));">
+
+  <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .85s ease,transform .85s ease;max-width:1180px;margin:0 auto;padding:118px 24px 128px;position:relative;z-index:4;">
+    <div style="font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#00ACFF;">Cross Selling Manager · Assessment</div>
+    <h1 style="font-size:clamp(34px,5.6vw,66px);font-weight:800;line-height:1.05;letter-spacing:-0.02em;margin:18px 0 0;max-width:18ch;">De la meta mensual a un <span style="color:#00ACFF;">motor comercial</span> <span style="color:#FED35D;">predecible</span></h1>
+    <p style="margin:26px 0 0;max-width:660px;font-size:clamp(16px,1.5vw,20px);line-height:1.6;color:rgba(255,255,255,.82);font-weight:400;">Plan comercial de 90 días para asegurar <strong style="color:#fff;font-weight:700;">$400M&nbsp;COP/mes</strong> sobre la base de clientes Siigo: convertir el outbound en el canal controlable, profundizar el cross-sell y subir el piso del equipo sin frenar a los mejores.</p>
+    <div style="display:flex;gap:11px;flex-wrap:wrap;margin-top:30px;">
+      <span style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);padding:9px 15px;border-radius:999px;font-size:13px;font-weight:500;color:rgba(255,255,255,.88);">Plan 90 días · Jul–Sep 2026</span>
+      <span style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);padding:9px 15px;border-radius:999px;font-size:13px;font-weight:500;color:rgba(255,255,255,.88);">Portafolio: ERP · Facturación · Nómina · Módulos</span>
+      <span style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);padding:9px 15px;border-radius:999px;font-size:13px;font-weight:500;color:rgba(255,255,255,.88);">Equipo: 16 ejecutivos · 100% remoto</span>
+    </div>
+    <a href="#resumen" style="display:inline-flex;align-items:center;gap:9px;margin-top:38px;background:#00ACFF;color:#072039;font-weight:700;font-size:15px;padding:15px 26px;border-radius:999px;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s;box-shadow:0 10px 30px rgba(0,172,255,.32);" style-hover="transform:translateY(-2px);background:#1cb8ff;box-shadow:0 16px 38px rgba(0,172,255,.45);">Ver el plan ↓</a>
+  </div>
+</section>
+
+<section id="resumen" style="position:relative;overflow:hidden;background:#fff;color:#16293B;padding:108px 24px;">
+  <div data-wm aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;"><div style="position:absolute;top:36px;right:-300px;width:660px;height:660px;border-radius:50%;border:36px solid rgba(0,172,255,.10);animation:wmFloatB 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;top:70px;right:352px;width:120px;height:120px;border-radius:50%;border:18px solid rgba(0,172,255,.13);animation:wmFloatB 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;top:238px;right:392px;width:62px;height:62px;border-radius:50%;border:12px solid rgba(0,172,255,.15);animation:wmFloatB 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;top:-122px;left:118px;width:252px;height:252px;border-radius:50%;border:32px solid rgba(0,172,255,.11);animation:wmFloatA 9s ease-in-out -5s infinite;will-change:transform;"></div><div style="position:absolute;bottom:-168px;left:-132px;width:392px;height:392px;border-radius:50%;border:36px solid rgba(254,211,93,.18);animation:wmFloatB 14s ease-in-out -6s infinite;will-change:transform;"></div><div style="position:absolute;bottom:206px;left:198px;width:92px;height:92px;border-radius:50%;border:15px solid rgba(254,211,93,.22);animation:wmFloatB 14s ease-in-out -6s infinite;will-change:transform;"></div></div>
+  <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease;max-width:1180px;margin:0 auto;position:relative;z-index:2;">
+    <div style="font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#00ACFF;">Lectura ejecutiva</div>
+    <h2 style="font-size:clamp(28px,4vw,46px);font-weight:700;letter-spacing:-0.01em;line-height:1.1;margin:14px 0 0;max-width:18ch;">El reto no es cumplir una vez: es poder <span style="color:#00ACFF;">repetir</span> el resultado</h2>
+
+    <div data-stagger style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin-top:44px;">
+      <div style="background:#EAF7FF;border:1px solid #E3EDF5;border-radius:16px;padding:26px 24px;transition:transform .25s,box-shadow .25s;" style-hover="transform:translateY(-4px);box-shadow:0 16px 36px rgba(11,42,74,.1);">
+        <div style="font-size:clamp(34px,4vw,46px);font-weight:800;letter-spacing:-0.02em;color:#0B2A4A;"><span data-count="400" data-prefix="$" data-suffix="M">$0M</span></div>
+        <div style="font-size:14px;font-weight:600;color:#16293B;margin-top:6px;">Presupuesto / mes</div>
+        <div style="font-size:13px;color:#5E7388;margin-top:3px;">Meta de ingreso recurrente</div>
+      </div>
+      <div style="background:#EAF7FF;border:1px solid #E3EDF5;border-radius:16px;padding:26px 24px;transition:transform .25s,box-shadow .25s;" style-hover="transform:translateY(-4px);box-shadow:0 16px 36px rgba(11,42,74,.1);">
+        <div style="font-size:clamp(34px,4vw,46px);font-weight:800;letter-spacing:-0.02em;color:#0B2A4A;"><span data-count="600" data-prefix="$" data-suffix="K">$0K</span></div>
+        <div style="font-size:14px;font-weight:600;color:#16293B;margin-top:6px;">Ticket neto</div>
+        <div style="font-size:13px;color:#5E7388;margin-top:3px;">Tras 10% de descuento</div>
+      </div>
+      <div style="background:#EAF7FF;border:1px solid #E3EDF5;border-radius:16px;padding:26px 24px;transition:transform .25s,box-shadow .25s;" style-hover="transform:translateY(-4px);box-shadow:0 16px 36px rgba(11,42,74,.1);">
+        <div style="font-size:clamp(34px,4vw,46px);font-weight:800;letter-spacing:-0.02em;color:#0B2A4A;"><span data-count="667">0</span></div>
+        <div style="font-size:14px;font-weight:600;color:#16293B;margin-top:6px;">Ventas / mes requeridas</div>
+        <div style="font-size:13px;color:#5E7388;margin-top:3px;">42 por asesor</div>
+      </div>
+      <div style="background:#0B2A4A;border:1px solid #0B2A4A;border-radius:16px;padding:26px 24px;transition:transform .25s,box-shadow .25s;" style-hover="transform:translateY(-4px);box-shadow:0 16px 36px rgba(11,42,74,.22);">
+        <div style="font-size:clamp(34px,4vw,46px);font-weight:800;letter-spacing:-0.02em;color:#FED35D;"><span data-count="10" data-suffix="%">0%</span></div>
+        <div style="font-size:14px;font-weight:600;color:#fff;margin-top:6px;">Efectividad outbound hoy</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.6);margin-top:3px;">El piso a mover</div>
+      </div>
+    </div>
+
+    <div data-stagger style="display:grid;grid-template-columns:1.35fr 1fr;gap:18px;margin-top:18px;">
+      <div style="background:#EAF7FF;border:1px solid #E3EDF5;border-radius:16px;padding:30px 30px;">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#0090DB;">Diagnóstico</div>
+        <p style="margin:12px 0 0;font-size:16px;line-height:1.62;color:#16293B;">Hay potencial comercial, pero hoy el número lo cargan canales de bajo control (inbound + referidos = <strong>60%</strong>) y unos pocos top performers. Eso lo hace frágil. Mi plan ataca cuatro palancas: <strong>productividad outbound controlable</strong>, <strong>profundidad de cuenta vía cross-sell</strong>, <strong>disciplina de margen</strong> y <strong>subir el piso del equipo</strong>.</p>
+      </div>
+      <div style="background:#0B2A4A;border-radius:16px;padding:30px 30px;color:#fff;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:-40px;right:-30px;width:160px;height:160px;border-radius:50%;border:1.5px solid rgba(0,172,255,.3);"></div>
+        <div style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#00ACFF;">La tesis</div>
+        <p style="margin:12px 0 0;font-size:16.5px;line-height:1.6;color:rgba(255,255,255,.92);">Vender mejor como <strong style="color:#FED35D;">consecuencia</strong> de foco, datos, método y acompañamiento — no de empujar a vender más.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:40px;border-left:4px solid #00ACFF;padding:6px 0 6px 24px;">
+      <p style="margin:0;font-size:clamp(19px,2.3vw,27px);font-weight:600;line-height:1.4;color:#0B2A4A;letter-spacing:-0.01em;">"Pensar fuera de la caja es convertir una meta comercial en un <span style="color:#00ACFF;">sistema sostenible de crecimiento</span>."</p>
+    </div>
+  </div>
+</section>
+
+<section id="matematica" style="position:relative;overflow:hidden;color:#fff;background:linear-gradient(180deg,#0B2A4A,#072039);padding:108px 24px;">
+  <div data-wm aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;"><div style="position:absolute;top:-150px;left:-170px;width:380px;height:380px;border-radius:50%;border:60px solid rgba(254,211,93,.42);animation:wmFloatA 11s ease-in-out -2s infinite;will-change:transform;"></div><div style="position:absolute;bottom:-160px;right:-130px;width:320px;height:320px;border-radius:50%;border:48px solid rgba(0,172,255,.42);animation:wmFloatB 13s ease-in-out -5s infinite;will-change:transform;"></div></div>
+  <div style="position:absolute;top:60px;left:-90px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(0,172,255,.16),transparent 64%);pointer-events:none;"></div>
+  <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1.2px,transparent 1.2px);background-size:28px 28px;pointer-events:none;-webkit-mask-image:linear-gradient(0deg,transparent,#000 40%,transparent);mask-image:linear-gradient(0deg,transparent,#000 40%,transparent);"></div>
+  <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease;max-width:1180px;margin:0 auto;position:relative;z-index:2;">
+    <div style="font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#00ACFF;">La matemática del negocio</div>
+    <h2 style="font-size:clamp(28px,4vw,46px);font-weight:700;letter-spacing:-0.01em;line-height:1.1;margin:14px 0 0;max-width:20ch;">Para llegar a $400M necesitamos <span style="color:#FED35D;">667 ventas/mes</span></h2>
+
+    <div data-stagger style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:42px;">
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:28px 28px;backdrop-filter:blur(6px);">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#00ACFF;">Cálculo base</div>
+        <div style="margin-top:18px;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:17px;line-height:2;color:#fff;">
+          <div>$400.000.000 ÷ $600.000 = <span style="color:#FED35D;">666,7 → 667</span> ventas</div>
+          <div>667 ÷ 16 asesores = <span style="color:#FED35D;">41,7 → 42</span> ventas/asesor/mes</div>
+        </div>
+      </div>
+      <div style="background:#EAF7FF;border-radius:16px;padding:28px 28px;color:#16293B;">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#0090DB;">Nota de gerente</div>
+        <p style="margin:14px 0 0;font-size:16px;line-height:1.6;">Fijo una meta comercial de <strong>700</strong> (buffer ~5%) para que $400M sea <strong>piso, no techo</strong> — absorbe rampa de novatos y variabilidad.</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:24px;margin-top:18px;align-items:start;">
+      <div>
+        <div style="font-size:14px;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:12px;">Descomposición por origen de venta <span style="color:rgba(255,255,255,.55);font-weight:400;">(mix actual)</span></div>
+        <div style="overflow-x:auto;border-radius:14px;border:1px solid rgba(255,255,255,.12);">
+          <table style="width:100%;border-collapse:collapse;font-size:14px;min-width:430px;">
+            <thead><tr style="background:rgba(0,172,255,.16);color:#fff;text-align:left;">
+              <th style="padding:13px 16px;font-weight:600;">Canal</th>
+              <th style="padding:13px 16px;font-weight:600;">Mix</th>
+              <th style="padding:13px 16px;font-weight:600;">Ventas/mes</th>
+              <th style="padding:13px 16px;font-weight:600;">Ingreso</th>
+              <th style="padding:13px 16px;font-weight:600;">Control</th>
+            </tr></thead>
+            <tbody data-rows style="color:rgba(255,255,255,.9);">
+              <tr style="background:rgba(255,255,255,.03);"><td style="padding:12px 16px;border-top:1px solid rgba(255,255,255,.08);">Llamadas entrantes (inbound)</td><td style="padding:12px 16px;border-top:1px solid rgba(255,255,255,.08);">30%</td><td style="padding:12px 16px;border-top:1px solid rgba(255,255,255,.08);">200</td><td style="padding:12px 16px;border-top:1px solid rgba(255,255,255,.08);">$120M</td><td style="padding:12px 16px;border-top:1px solid rgba(255,255,255,.08);"><span style="color:#E8746B;font-weight:600;">Bajo</span></td></tr>
+              <tr style="background:rgba(0,172,255,.1);"><td style="padding:12px 16px;border-top:1px solid rgba(255,255,255,.08);font-weight:600;">Campañas outbound</td><td style="padding:12px 16px;border-top:1px solid rgba(255,255,255,.08);font-weight:600;">40%</td><td style="padding:12px 16px;border-top:1px solid rgba(255,255,255,.08);font-weight:600;">267</td><td style="padding:12px 16px;border-top:1px solid rgba(255,255,255,.08);font-weight:600;">$160M</td><td style="padding:12px 16px;border-top:1px solid rgba(255,255,255,.08);"><span style="color:#23B58A;font-weight:700;">Alto</span></td></tr>
+              <tr style="background:rgba(255,255,255,.03);"><td style="padding:12px 16px;border-top:1px solid rgba(255,255,255,.08);">Referidos int. y ext.</td><td style="padding:12px 16px;border-top:1px solid rgba(255,255,255,.08);">30%</td><td style="padding:12px 16px;border-top:1px solid rgba(255,255,255,.08);">200</td><td style="padding:12px 16px;border-top:1px solid rgba(255,255,255,.08);">$120M</td><td style="padding:12px 16px;border-top:1px solid rgba(255,255,255,.08);"><span style="color:#E8746B;font-weight:600;">Bajo</span></td></tr>
+              <tr style="background:rgba(254,211,93,.14);"><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.14);font-weight:700;color:#FED35D;">Total</td><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.14);font-weight:700;color:#FED35D;">100%</td><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.14);font-weight:700;color:#FED35D;">667</td><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.14);font-weight:700;color:#FED35D;">$400M</td><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.14);">—</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:18px;padding-top:30px;">
+        <div data-donut style="position:relative;width:210px;height:210px;">
+          <svg viewBox="0 0 210 210" style="width:100%;height:100%;display:block;filter:drop-shadow(0 14px 40px rgba(0,0,0,.28));overflow:visible;">
+            <circle data-seg data-len="162.11" data-start="0" data-end="0.30" cx="105" cy="105" r="86" fill="none" stroke="#6FA8CC" stroke-width="30" stroke-dasharray="162.11 540.35" stroke-dashoffset="162.11" transform="rotate(-90 105 105)"></circle>
+            <circle data-seg data-len="216.14" data-start="0.30" data-end="0.70" cx="105" cy="105" r="86" fill="none" stroke="#00ACFF" stroke-width="30" stroke-dasharray="216.14 540.35" stroke-dashoffset="216.14" transform="rotate(18 105 105)"></circle>
+            <circle data-seg data-len="162.11" data-start="0.70" data-end="1" cx="105" cy="105" r="86" fill="none" stroke="#BCD9EE" stroke-width="30" stroke-dasharray="162.11 540.35" stroke-dashoffset="162.11" transform="rotate(162 105 105)"></circle>
+          </svg>
+          <div style="position:absolute;inset:33px;border-radius:50%;background:#072039;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+            <div style="font-size:12px;color:rgba(255,255,255,.55);letter-spacing:.1em;text-transform:uppercase;">Total</div>
+            <div style="font-size:32px;font-weight:800;color:#fff;line-height:1;margin-top:2px;"><span data-count="667">0</span></div>
+            <div style="font-size:13px;color:#00ACFF;font-weight:600;margin-top:2px;">$400M / mes</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px;font-size:13.5px;width:100%;max-width:210px;">
+          <div style="display:flex;align-items:center;gap:9px;"><span style="width:13px;height:13px;border-radius:3px;background:#6FA8CC;"></span>Inbound · 30%</div>
+          <div style="display:flex;align-items:center;gap:9px;"><span style="width:13px;height:13px;border-radius:3px;background:#00ACFF;"></span><strong style="font-weight:600;">Outbound · 40%</strong></div>
+          <div style="display:flex;align-items:center;gap:9px;"><span style="width:13px;height:13px;border-radius:3px;background:#BCD9EE;"></span>Referidos · 30%</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:30px;border-left:4px solid #FED35D;padding:4px 0 4px 22px;max-width:880px;">
+      <p style="margin:0;font-size:17px;line-height:1.55;color:rgba(255,255,255,.9);">El <strong style="color:#00ACFF;">40% (outbound)</strong> es el único tramo que gobierno en volumen. Los otros <strong>$240M</strong> dependen de demanda que no controlo. Ahí está el riesgo — y la oportunidad.</p>
+    </div>
+  </div>
+</section>
+
+<section style="position:relative;overflow:hidden;background:#fff;color:#16293B;padding:108px 24px;">
+  <div data-wm aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;"><div style="position:absolute;top:36px;right:-300px;width:660px;height:660px;border-radius:50%;border:36px solid rgba(0,172,255,.10);animation:wmFloatB 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;top:70px;right:352px;width:120px;height:120px;border-radius:50%;border:18px solid rgba(0,172,255,.13);animation:wmFloatB 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;top:238px;right:392px;width:62px;height:62px;border-radius:50%;border:12px solid rgba(0,172,255,.15);animation:wmFloatB 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;top:-122px;left:118px;width:252px;height:252px;border-radius:50%;border:32px solid rgba(0,172,255,.11);animation:wmFloatA 9s ease-in-out -5s infinite;will-change:transform;"></div><div style="position:absolute;bottom:-168px;left:-132px;width:392px;height:392px;border-radius:50%;border:36px solid rgba(254,211,93,.18);animation:wmFloatB 14s ease-in-out -6s infinite;will-change:transform;"></div><div style="position:absolute;bottom:206px;left:198px;width:92px;height:92px;border-radius:50%;border:15px solid rgba(254,211,93,.22);animation:wmFloatB 14s ease-in-out -6s infinite;will-change:transform;"></div></div>
+  <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease;max-width:1180px;margin:0 auto;position:relative;z-index:2;">
+    <div style="font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#00ACFF;">Proyección · 3 meses</div>
+    <h2 style="font-size:clamp(28px,4vw,46px);font-weight:700;letter-spacing:-0.01em;line-height:1.1;margin:14px 0 0;max-width:18ch;">La meta no cambia; cambia la <span style="color:#00ACFF;">presión diaria</span></h2>
+    <p style="margin:16px 0 0;max-width:680px;font-size:16px;line-height:1.6;color:#5E7388;">Días hábiles reales en Colombia (lun–vie menos festivos). La meta se mantiene en <strong style="color:#16293B;">667 ventas/mes</strong> — lo que cambia es cuánto hay que producir cada día.</p>
+
+    <div data-stagger style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:42px;">
+      <div style="background:#EAF7FF;border:1px solid #E3EDF5;border-radius:16px;padding:26px 26px;">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;"><span style="font-size:15px;font-weight:700;color:#0B2A4A;">Julio</span><span style="font-size:13px;color:#5E7388;">festivo 20 jul</span></div>
+        <div style="font-size:42px;font-weight:800;letter-spacing:-0.02em;color:#0B2A4A;margin-top:14px;"><span data-count="22">0</span><span style="font-size:16px;font-weight:600;color:#5E7388;"> días</span></div>
+        <div style="height:1px;background:#E3EDF5;margin:18px 0;"></div>
+        <div style="font-size:14px;color:#16293B;"><strong style="color:#00ACFF;font-size:18px;"><span data-count="30.3" data-dec="1">0</span></strong> ventas/día equipo</div>
+        <div style="font-size:14px;color:#5E7388;margin-top:4px;"><span data-count="1.9" data-dec="1">0</span> / asesor</div>
+      </div>
+      <div style="background:#0B2A4A;border-radius:16px;padding:26px 26px;position:relative;overflow:hidden;box-shadow:0 18px 44px rgba(11,42,74,.22);">
+        <div style="position:absolute;top:-48px;right:-48px;width:140px;height:140px;border-radius:50%;border:1.5px solid rgba(254,211,93,.3);"></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;position:relative;z-index:1;"><span style="font-size:15px;font-weight:700;color:#fff;">Agosto</span><span style="display:inline-block;white-space:nowrap;background:#FED35D;color:#072039;font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;">+16% intensidad</span></div>
+        <div style="font-size:42px;font-weight:800;letter-spacing:-0.02em;color:#FED35D;margin-top:14px;"><span data-count="19">0</span><span style="font-size:16px;font-weight:600;color:rgba(255,255,255,.6);"> días</span></div>
+        <div style="font-size:12px;color:rgba(255,255,255,.55);margin-top:2px;">festivos 7 y 17 ago · mes crítico</div>
+        <div style="height:1px;background:rgba(255,255,255,.12);margin:16px 0;"></div>
+        <div style="font-size:14px;color:#fff;"><strong style="color:#FED35D;font-size:18px;"><span data-count="35.1" data-dec="1">0</span></strong> ventas/día equipo</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.7);margin-top:4px;"><span data-count="2.2" data-dec="1">0</span> / asesor</div>
+      </div>
+      <div style="background:#EAF7FF;border:1px solid #E3EDF5;border-radius:16px;padding:26px 26px;">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;"><span style="font-size:15px;font-weight:700;color:#0B2A4A;">Septiembre</span><span style="font-size:13px;color:#5E7388;">sin festivos</span></div>
+        <div style="font-size:42px;font-weight:800;letter-spacing:-0.02em;color:#0B2A4A;margin-top:14px;"><span data-count="22">0</span><span style="font-size:16px;font-weight:600;color:#5E7388;"> días</span></div>
+        <div style="height:1px;background:#E3EDF5;margin:18px 0;"></div>
+        <div style="font-size:14px;color:#16293B;"><strong style="color:#00ACFF;font-size:18px;"><span data-count="30.3" data-dec="1">0</span></strong> ventas/día equipo</div>
+        <div style="font-size:14px;color:#5E7388;margin-top:4px;"><span data-count="1.9" data-dec="1">0</span> / asesor</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;align-items:center;">
+      <div style="border:1px solid #E3EDF5;border-radius:16px;padding:28px 28px 22px;">
+        <div style="font-size:13px;font-weight:600;color:#5E7388;margin-bottom:22px;">Intensidad diaria del equipo (ventas/día)</div>
+        <div data-bars="proj" style="display:flex;align-items:flex-end;justify-content:space-around;gap:20px;height:200px;">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:10px;flex:1;height:100%;justify-content:flex-end;">
+            <div style="font-size:15px;font-weight:700;color:#0B2A4A;"><span data-count="30.3" data-dec="1">0</span></div>
+            <div style="width:100%;max-width:62px;height:76%;background:linear-gradient(180deg,#00ACFF,#0090DB);border-radius:8px 8px 0 0;"></div>
+            <div style="font-size:13px;color:#5E7388;font-weight:600;">Jul · 22d</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:10px;flex:1;height:100%;justify-content:flex-end;">
+            <div style="font-size:15px;font-weight:800;color:#0B2A4A;"><span data-count="35.1" data-dec="1">0</span></div>
+            <div style="width:100%;max-width:62px;height:100%;background:linear-gradient(180deg,#FED35D,#f6c235);border-radius:8px 8px 0 0;"></div>
+            <div style="font-size:13px;color:#0B2A4A;font-weight:700;">Ago · 19d</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:10px;flex:1;height:100%;justify-content:flex-end;">
+            <div style="font-size:15px;font-weight:700;color:#0B2A4A;"><span data-count="30.3" data-dec="1">0</span></div>
+            <div style="width:100%;max-width:62px;height:76%;background:linear-gradient(180deg,#00ACFF,#0090DB);border-radius:8px 8px 0 0;"></div>
+            <div style="font-size:13px;color:#5E7388;font-weight:600;">Sep · 22d</div>
+          </div>
+        </div>
+      </div>
+      <div style="background:#EAF7FF;border-radius:16px;padding:30px 30px;">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#0090DB;">Implicación agosto</div>
+        <p style="margin:12px 0 0;font-size:16px;line-height:1.6;color:#16293B;">Con 3 días menos, agosto exige <strong>+16% de intensidad</strong> en plena temporada de vacaciones. Mitigación: <strong>front-load</strong> de base la primera semana, pipeline de referidos cargado desde julio y seguimiento temprano de la brecha.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="position:relative;overflow:hidden;color:#fff;background:linear-gradient(180deg,#072039,#0B2A4A);padding:108px 24px;">
+  <div data-wm aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;"><div style="position:absolute;top:-150px;left:-150px;width:300px;height:300px;border-radius:50%;border:46px solid rgba(0,172,255,.42);animation:wmFloatA 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;top:96px;left:286px;width:118px;height:118px;border-radius:50%;border:22px solid rgba(0,172,255,.42);animation:wmFloatA 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;top:196px;left:138px;width:64px;height:64px;border-radius:50%;border:14px solid rgba(0,172,255,.55);animation:wmFloatA 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;bottom:-170px;right:-150px;width:340px;height:340px;border-radius:50%;border:52px solid rgba(0,172,255,.42);animation:wmFloatB 14s ease-in-out -6s infinite;will-change:transform;"></div></div>
+  <div style="position:absolute;top:40px;right:-90px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(0,172,255,.16),transparent 64%);pointer-events:none;"></div>
+  <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease;max-width:1180px;margin:0 auto;position:relative;z-index:2;">
+    <div style="font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#00ACFF;">Hallazgo clave · Base outbound</div>
+    <h2 style="font-size:clamp(28px,4vw,46px);font-weight:700;letter-spacing:-0.01em;line-height:1.1;margin:14px 0 0;max-width:20ch;">Subir la efectividad <span style="color:#FED35D;">cierra sola</span> la brecha de base</h2>
+    <p style="margin:16px 0 0;max-width:720px;font-size:16px;line-height:1.6;color:rgba(255,255,255,.78);">Para las <strong style="color:#fff;">267 ventas outbound</strong>, con contactabilidad 60%, los registros necesarios dependen directamente de la efectividad de la conversación.</p>
+
+    <div style="overflow-x:auto;margin-top:36px;border-radius:16px;border:1px solid rgba(255,255,255,.12);">
+      <table style="width:100%;border-collapse:collapse;font-size:14.5px;min-width:560px;">
+        <thead><tr style="background:rgba(0,172,255,.16);color:#fff;text-align:left;">
+          <th style="padding:14px 18px;font-weight:600;">Escenario</th>
+          <th style="padding:14px 18px;font-weight:600;">Efectividad</th>
+          <th style="padding:14px 18px;font-weight:600;">Contactos</th>
+          <th style="padding:14px 18px;font-weight:600;">Registros/mes</th>
+          <th style="padding:14px 18px;font-weight:600;">Reg/asesor/día*</th>
+        </tr></thead>
+        <tbody data-rows style="color:rgba(255,255,255,.9);">
+          <tr style="background:rgba(255,255,255,.03);"><td style="padding:14px 18px;border-top:1px solid rgba(255,255,255,.08);font-weight:600;">Hoy</td><td style="padding:14px 18px;border-top:1px solid rgba(255,255,255,.08);">10%</td><td style="padding:14px 18px;border-top:1px solid rgba(255,255,255,.08);">2.670</td><td style="padding:14px 18px;border-top:1px solid rgba(255,255,255,.08);">4.450</td><td style="padding:14px 18px;border-top:1px solid rgba(255,255,255,.08);"><span style="color:#E8746B;">12,6 ▲ sobre estándar</span></td></tr>
+          <tr style="background:rgba(254,211,93,.14);"><td style="padding:16px 18px;border-top:1px solid rgba(255,255,255,.14);font-weight:700;color:#FED35D;">Meta</td><td style="padding:16px 18px;border-top:1px solid rgba(255,255,255,.14);font-weight:700;color:#FED35D;">12%</td><td style="padding:16px 18px;border-top:1px solid rgba(255,255,255,.14);font-weight:700;">2.225</td><td style="padding:16px 18px;border-top:1px solid rgba(255,255,255,.14);font-weight:700;">3.708</td><td style="padding:16px 18px;border-top:1px solid rgba(255,255,255,.14);font-weight:700;color:#23B58A;">10,5 ≈ estándar 10</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="font-size:12.5px;color:rgba(255,255,255,.5);margin-top:10px;">*Julio, 22 días, 16 asesores. Estándar = 10 registros/asesor/día hábil (dato del caso).</div>
+
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:30px 30px;margin-top:30px;backdrop-filter:blur(6px);">
+      <p style="margin:0;font-size:clamp(17px,2vw,22px);line-height:1.5;color:#fff;font-weight:500;">Pasar de 10% a 12% baja la base necesaria de <strong style="color:#FED35D;font-weight:800;">12,6 a 10,5</strong> registros/día. No es "llamar más": es <strong style="color:#00ACFF;">llamar mejor</strong> para el mismo resultado.</p>
+    </div>
+
+    <div data-stagger style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px;">
+      <div style="border:1px solid rgba(0,172,255,.3);border-radius:16px;padding:26px 26px;background:rgba(0,172,255,.05);">
+        <div style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;background:#00ACFF;color:#072039;padding:4px 11px;border-radius:999px;">BASE</div>
+        <div style="font-size:17px;font-weight:700;color:#fff;margin-top:14px;">Sostener mix 40% = 267 ventas</div>
+        <p style="margin:8px 0 0;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.78);">12% + ~10–11 reg/día. Mismo esfuerzo bruto, mejor calidad.</p>
+      </div>
+      <div style="border:1px solid rgba(254,211,93,.35);border-radius:16px;padding:26px 26px;background:rgba(254,211,93,.06);">
+        <div style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;background:#FED35D;color:#072039;padding:4px 11px;border-radius:999px;">MOTOR</div>
+        <div style="font-size:17px;font-weight:700;color:#fff;margin-top:14px;">Llevar outbound a 50% = 334 ventas</div>
+        <p style="margin:8px 0 0;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.78);">12% + ~13–14 reg/día (≈4.640 reg/mes). Escalar la base con propósito: hacer el número controlable.</p>
+      </div>
+    </div>
+
+    <div style="background:#EAF7FF;border-radius:14px;padding:18px 22px;margin-top:18px;color:#16293B;font-size:14.5px;line-height:1.55;">
+      <strong style="color:#0090DB;">Nota de corrección:</strong> "14 reg/día" no es el escenario base — es el de crecimiento. A 12%, el caso base se sostiene casi con el estándar de 10.
+    </div>
+  </div>
+</section>
+
+<section id="calculadora" style="position:relative;overflow:hidden;color:#fff;background:linear-gradient(160deg,#0B2A4A 0%,#061d35 100%);padding:108px 24px;">
+  <div data-wm aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;"><div style="position:absolute;top:-150px;left:-170px;width:380px;height:380px;border-radius:50%;border:60px solid rgba(254,211,93,.42);animation:wmFloatA 11s ease-in-out -2s infinite;will-change:transform;"></div><div style="position:absolute;bottom:160px;right:250px;width:80px;height:80px;border-radius:50%;border:18px solid rgba(0,172,255,.55);animation:wmFloatB 13s ease-in-out -5s infinite;will-change:transform;"></div><div style="position:absolute;bottom:-160px;right:-130px;width:320px;height:320px;border-radius:50%;border:48px solid rgba(0,172,255,.42);animation:wmFloatB 13s ease-in-out -5s infinite;will-change:transform;"></div></div>
+  <div style="position:absolute;top:-80px;left:50%;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(0,172,255,.18),transparent 62%);pointer-events:none;transform:translateX(-50%);"></div>
+  <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1.2px,transparent 1.2px);background-size:30px 30px;pointer-events:none;-webkit-mask-image:radial-gradient(circle at 50% 30%,#000,transparent 70%);mask-image:radial-gradient(circle at 50% 30%,#000,transparent 70%);"></div>
+  <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease;max-width:1180px;margin:0 auto;position:relative;z-index:2;">
+    <div style="text-align:center;">
+      <div style="font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#00ACFF;">🧮 Calculadora de escenarios</div>
+      <h2 style="font-size:clamp(28px,4vw,46px);font-weight:700;letter-spacing:-0.01em;line-height:1.1;margin:14px auto 0;max-width:20ch;">Juega con el motor: ¿qué se necesita para los <span style="color:#FED35D;">$400M</span>?</h2>
+      <p style="margin:14px auto 0;max-width:560px;font-size:16px;line-height:1.6;color:rgba(255,255,255,.72);">Mueve las palancas y mira en vivo si el plan alcanza la meta.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1.05fr;gap:22px;margin-top:42px;align-items:start;">
+
+      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:30px 30px;backdrop-filter:blur(8px);">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#00ACFF;margin-bottom:6px;">Palancas</div>
+
+        <div style="margin-top:22px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;"><label for="ef" style="font-size:14.5px;font-weight:600;color:#fff;">Efectividad outbound</label><span style="font-size:22px;font-weight:800;color:#FED35D;">{{ ef }}%</span></div>
+          <input id="ef" type="range" min="8" max="16" step="0.5" value="{{ ef }}" onInput="{{ onEf }}" aria-label="Efectividad outbound en porcentaje" style="width:100%;margin-top:12px;cursor:pointer;">
+          <div style="display:flex;justify-content:space-between;font-size:11.5px;color:rgba(255,255,255,.45);margin-top:5px;"><span>8%</span><span>16%</span></div>
+        </div>
+
+        <div style="margin-top:24px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;"><label for="reg" style="font-size:14.5px;font-weight:600;color:#fff;">Registros / asesor / día</label><span style="font-size:22px;font-weight:800;color:#FED35D;">{{ reg }}</span></div>
+          <input id="reg" type="range" min="8" max="18" step="1" value="{{ reg }}" onInput="{{ onReg }}" aria-label="Registros por asesor por día" style="width:100%;margin-top:12px;cursor:pointer;">
+          <div style="display:flex;justify-content:space-between;font-size:11.5px;color:rgba(255,255,255,.45);margin-top:5px;"><span>8</span><span>18</span></div>
+        </div>
+
+        <div style="margin-top:24px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;"><label for="ct" style="font-size:14.5px;font-weight:600;color:#fff;">Contactabilidad ("alo")</label><span style="font-size:22px;font-weight:800;color:#FED35D;">{{ contact }}%</span></div>
+          <input id="ct" type="range" min="50" max="70" step="1" value="{{ contact }}" onInput="{{ onContact }}" aria-label="Contactabilidad en porcentaje" style="width:100%;margin-top:12px;cursor:pointer;">
+          <div style="display:flex;justify-content:space-between;font-size:11.5px;color:rgba(255,255,255,.45);margin-top:5px;"><span>50%</span><span>70%</span></div>
+        </div>
+
+        <div style="margin-top:24px;">
+          <label for="mes" style="font-size:14.5px;font-weight:600;color:#fff;">Mes (días hábiles)</label>
+          <select id="mes" value="{{ mes }}" onChange="{{ onMes }}" aria-label="Selección de mes" style="width:100%;margin-top:10px;padding:12px 14px;border-radius:11px;background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.2);font-family:inherit;font-size:15px;font-weight:600;cursor:pointer;">
+            <option style="color:#16293B;" value="Julio">Julio · 22 días</option>
+            <option style="color:#16293B;" value="Agosto">Agosto · 19 días</option>
+            <option style="color:#16293B;" value="Septiembre">Septiembre · 22 días</option>
+          </select>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;">
+          <span style="font-size:12px;color:rgba(255,255,255,.55);background:rgba(255,255,255,.06);padding:6px 11px;border-radius:999px;">16 asesores</span>
+          <span style="font-size:12px;color:rgba(255,255,255,.55);background:rgba(255,255,255,.06);padding:6px 11px;border-radius:999px;">ticket $600.000</span>
+          <span style="font-size:12px;color:rgba(255,255,255,.55);background:rgba(255,255,255,.06);padding:6px 11px;border-radius:999px;">inbound 200 + referidos 200</span>
+        </div>
+
+        <div style="height:1px;background:rgba(255,255,255,.1);margin:24px 0 18px;"></div>
+        <div style="font-size:12px;font-weight:600;color:rgba(255,255,255,.55);margin-bottom:10px;">Presets rápidos</div>
+        <div style="display:flex;flex-wrap:wrap;gap:9px;">
+          <button onClick="{{ presetHoy }}" style="flex:1;min-width:90px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);color:#fff;font-family:inherit;font-size:13px;font-weight:600;padding:11px 10px;border-radius:11px;cursor:pointer;transition:all .2s;" style-hover="background:rgba(0,172,255,.2);border-color:#00ACFF;">Hoy<br><span style="font-weight:400;color:rgba(255,255,255,.55);font-size:11.5px;">10% · 10/día</span></button>
+          <button onClick="{{ presetBase }}" style="flex:1;min-width:90px;background:rgba(0,172,255,.16);border:1px solid rgba(0,172,255,.4);color:#fff;font-family:inherit;font-size:13px;font-weight:600;padding:11px 10px;border-radius:11px;cursor:pointer;transition:all .2s;" style-hover="background:rgba(0,172,255,.3);border-color:#00ACFF;">Plan base<br><span style="font-weight:400;color:rgba(255,255,255,.6);font-size:11.5px;">12% · 11/día</span></button>
+          <button onClick="{{ presetMotor }}" style="flex:1;min-width:90px;background:rgba(254,211,93,.14);border:1px solid rgba(254,211,93,.4);color:#fff;font-family:inherit;font-size:13px;font-weight:600;padding:11px 10px;border-radius:11px;cursor:pointer;transition:all .2s;" style-hover="background:rgba(254,211,93,.26);border-color:#FED35D;">Motor<br><span style="font-weight:400;color:rgba(255,255,255,.6);font-size:11.5px;">12% · 14/día</span></button>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="border-radius:18px;padding:24px 26px;background:{{ statusBg }};border:1.5px solid {{ statusBorder }};transition:all .3s;">
+          <div style="font-size:clamp(20px,2.6vw,28px);font-weight:800;letter-spacing:-0.01em;color:{{ statusColor }};line-height:1.2;">{{ statusText }}</div>
+          <div style="margin-top:16px;height:12px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden;">
+            <div style="height:100%;border-radius:999px;width:{{ progressW }};background:{{ progressBg }};transition:width .4s ease,background .3s;"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.6);margin-top:7px;"><span>Avance hacia 667 ventas / $400M</span><span style="color:#fff;font-weight:600;">{{ mixLabel }}</span></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px;">
+            <div style="font-size:12px;color:rgba(255,255,255,.55);font-weight:600;">Registros / mes</div>
+            <div style="font-size:30px;font-weight:800;color:#fff;margin-top:6px;letter-spacing:-0.02em;">{{ registrosMes }}</div>
+          </div>
+          <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px;">
+            <div style="font-size:12px;color:rgba(255,255,255,.55);font-weight:600;">Contactos efectivos</div>
+            <div style="font-size:30px;font-weight:800;color:#fff;margin-top:6px;letter-spacing:-0.02em;">{{ contactos }}</div>
+          </div>
+          <div style="background:rgba(0,172,255,.12);border:1px solid rgba(0,172,255,.3);border-radius:14px;padding:20px;">
+            <div style="font-size:12px;color:rgba(255,255,255,.6);font-weight:600;">Ventas outbound</div>
+            <div style="font-size:30px;font-weight:800;color:#00ACFF;margin-top:6px;letter-spacing:-0.02em;">{{ ventasOutbound }}</div>
+          </div>
+          <div style="background:rgba(254,211,93,.12);border:1px solid rgba(254,211,93,.3);border-radius:14px;padding:20px;">
+            <div style="font-size:12px;color:rgba(255,255,255,.6);font-weight:600;">Ventas totales</div>
+            <div style="font-size:30px;font-weight:800;color:#FED35D;margin-top:6px;letter-spacing:-0.02em;">{{ ventasTotales }}</div>
+          </div>
+        </div>
+
+        <div style="background:linear-gradient(135deg,rgba(0,172,255,.18),rgba(254,211,93,.12));border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:24px 26px;">
+          <div style="font-size:12px;color:rgba(255,255,255,.7);font-weight:600;letter-spacing:.08em;text-transform:uppercase;">Ingreso proyectado / mes</div>
+          <div style="font-size:clamp(34px,4.5vw,48px);font-weight:800;color:#fff;letter-spacing:-0.02em;margin-top:4px;">{{ ingreso }}</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section style="position:relative;overflow:hidden;background:#fff;color:#16293B;padding:108px 24px;">
+  <div data-wm aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;"><div style="position:absolute;top:36px;right:-300px;width:660px;height:660px;border-radius:50%;border:36px solid rgba(0,172,255,.10);animation:wmFloatB 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;top:70px;right:352px;width:120px;height:120px;border-radius:50%;border:18px solid rgba(0,172,255,.13);animation:wmFloatB 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;top:238px;right:392px;width:62px;height:62px;border-radius:50%;border:12px solid rgba(0,172,255,.15);animation:wmFloatB 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;top:-122px;left:118px;width:252px;height:252px;border-radius:50%;border:32px solid rgba(0,172,255,.11);animation:wmFloatA 9s ease-in-out -5s infinite;will-change:transform;"></div><div style="position:absolute;bottom:-168px;left:-132px;width:392px;height:392px;border-radius:50%;border:36px solid rgba(254,211,93,.18);animation:wmFloatB 14s ease-in-out -6s infinite;will-change:transform;"></div><div style="position:absolute;bottom:206px;left:198px;width:92px;height:92px;border-radius:50%;border:15px solid rgba(254,211,93,.22);animation:wmFloatB 14s ease-in-out -6s infinite;will-change:transform;"></div></div>
+  <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease;max-width:1180px;margin:0 auto;position:relative;z-index:2;">
+    <div style="font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#00ACFF;">Estrategias outbound · 10% → 12%</div>
+    <h2 style="font-size:clamp(28px,4vw,46px);font-weight:700;letter-spacing:-0.01em;line-height:1.1;margin:14px 0 0;max-width:20ch;">No llamar más: <span style="color:#00ACFF;">llamar mejor</span>, a mejores clientes, con mejor cadencia</h2>
+    <p style="margin:16px 0 0;max-width:760px;font-size:16px;line-height:1.6;color:#5E7388;">El <strong style="color:#16293B;">70% de la mejora la ejecuta el equipo</strong>; las áreas de apoyo (Planeación, Marketing, Calidad, Entrenamiento) aceleran. Cada palanca tiene dueño y métrica visible.</p>
+
+    <div data-stagger style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:42px;">
+      <div style="background:#fff;border:1px solid #E3EDF5;border-radius:16px;padding:28px 26px;transition:transform .25s,box-shadow .25s;" style-hover="transform:translateY(-4px);box-shadow:0 18px 40px rgba(11,42,74,.1);">
+        <div style="width:44px;height:44px;border-radius:12px;background:#EAF7FF;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:#0090DB;">1</div>
+        <div style="font-size:18px;font-weight:700;color:#0B2A4A;margin-top:18px;">Calidad de base — Scoring comercial</div>
+        <p style="margin:10px 0 0;font-size:14.5px;line-height:1.55;color:#5E7388;">Priorizar registros por producto activo, antigüedad, uso, tamaño, industria y propensión. <em style="color:#16293B;">No todos los 10 registros valen igual.</em></p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:16px;"><span style="font-size:11px;font-weight:700;background:#0B2A4A;color:#fff;padding:4px 10px;border-radius:999px;">70% Equipo</span><span style="font-size:11px;font-weight:600;background:#EAF7FF;color:#0090DB;padding:4px 10px;border-radius:999px;">Planeación</span><span style="font-size:11px;font-weight:600;background:#EAF7FF;color:#0090DB;padding:4px 10px;border-radius:999px;">Marketing</span></div>
+      </div>
+      <div style="background:#fff;border:1px solid #E3EDF5;border-radius:16px;padding:28px 26px;transition:transform .25s,box-shadow .25s;" style-hover="transform:translateY(-4px);box-shadow:0 18px 40px rgba(11,42,74,.1);">
+        <div style="width:44px;height:44px;border-radius:12px;background:#EAF7FF;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:#0090DB;">2</div>
+        <div style="font-size:18px;font-weight:700;color:#0B2A4A;margin-top:18px;">Oferta correcta — Next Best Product</div>
+        <p style="margin:10px 0 0;font-size:14.5px;line-height:1.55;color:#5E7388;">El siguiente producto lógico por cliente según lo que ya tiene y su dolor. Guion por dolor: ahorro, control, cumplimiento.</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:16px;"><span style="font-size:11px;font-weight:700;background:#0B2A4A;color:#fff;padding:4px 10px;border-radius:999px;">70% Equipo</span><span style="font-size:11px;font-weight:600;background:#EAF7FF;color:#0090DB;padding:4px 10px;border-radius:999px;">Producto</span><span style="font-size:11px;font-weight:600;background:#EAF7FF;color:#0090DB;padding:4px 10px;border-radius:999px;">Training</span></div>
+      </div>
+      <div style="background:#fff;border:1px solid #E3EDF5;border-radius:16px;padding:28px 26px;transition:transform .25s,box-shadow .25s;" style-hover="transform:translateY(-4px);box-shadow:0 18px 40px rgba(11,42,74,.1);">
+        <div style="width:44px;height:44px;border-radius:12px;background:#EAF7FF;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:#0090DB;">3</div>
+        <div style="font-size:18px;font-weight:700;color:#0B2A4A;margin-top:18px;">Ejecución disciplinada — Cadencia de 5 toques</div>
+        <p style="margin:10px 0 0;font-size:14.5px;line-height:1.55;color:#5E7388;">Llamada → WhatsApp → correo → reintento → cierre con agenda/propuesta. Calidad escucha; entrenamiento hace roleplay sobre objeciones reales.</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:16px;"><span style="font-size:11px;font-weight:700;background:#0B2A4A;color:#fff;padding:4px 10px;border-radius:999px;">70% Equipo</span><span style="font-size:11px;font-weight:600;background:#EAF7FF;color:#0090DB;padding:4px 10px;border-radius:999px;">Marketing</span><span style="font-size:11px;font-weight:600;background:#EAF7FF;color:#0090DB;padding:4px 10px;border-radius:999px;">Calidad</span></div>
+      </div>
+    </div>
+
+    <div data-stagger style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px;">
+      <div style="background:#0B2A4A;border-radius:16px;padding:30px 30px;color:#fff;position:relative;overflow:hidden;">
+        <div style="position:absolute;bottom:-40px;right:-30px;width:170px;height:170px;border-radius:50%;border:1.5px solid rgba(254,211,93,.25);"></div>
+        <div style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#00ACFF;">El valor de 2 puntos</div>
+        <p style="margin:12px 0 0;font-size:16.5px;line-height:1.55;color:rgba(255,255,255,.9);">+2 pts (10%→12%) sobre la base de julio = <strong style="color:#FED35D;font-size:21px;"><span data-count="42" data-prefix="+" data-suffix=" ventas/mes">+0 ventas/mes</span></strong> solo en outbound = <strong style="color:#FED35D;font-size:21px;"><span data-count="25" data-prefix="+$" data-suffix="M/mes">+$0M/mes</span></strong>, sin agrandar la base. <span style="color:rgba(255,255,255,.65);">(253 vs 211 ventas.)</span></p>
+      </div>
+      <div style="background:#EAF7FF;border-radius:16px;padding:30px 30px;">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#0090DB;">Regla de gestión</div>
+        <p style="margin:12px 0 0;font-size:16px;line-height:1.6;color:#16293B;">Cada palanca tiene <strong>dueño, apoyo, entregable semanal y métrica visible</strong>. Sin métrica no hay palanca.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="crosssell" style="position:relative;overflow:hidden;color:#fff;background:linear-gradient(180deg,#0B2A4A,#072039);padding:108px 24px;">
+  <div data-wm aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;"><div style="position:absolute;top:-150px;left:-150px;width:300px;height:300px;border-radius:50%;border:46px solid rgba(0,172,255,.42);animation:wmFloatA 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;top:96px;left:286px;width:118px;height:118px;border-radius:50%;border:22px solid rgba(0,172,255,.42);animation:wmFloatA 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;top:196px;left:138px;width:64px;height:64px;border-radius:50%;border:14px solid rgba(0,172,255,.55);animation:wmFloatA 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;bottom:-170px;right:-150px;width:340px;height:340px;border-radius:50%;border:52px solid rgba(0,172,255,.42);animation:wmFloatB 14s ease-in-out -6s infinite;will-change:transform;"></div></div>
+  <div style="position:absolute;top:60px;right:-90px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(0,172,255,.16),transparent 64%);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:40px;left:-100px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(254,211,93,.12),transparent 64%);pointer-events:none;"></div>
+  <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease;max-width:1180px;margin:0 auto;position:relative;z-index:2;">
+    <div style="font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#00ACFF;">Cross-sell &amp; up-sell · el corazón del rol</div>
+    <h2 style="font-size:clamp(28px,4vw,46px);font-weight:700;letter-spacing:-0.01em;line-height:1.1;margin:14px 0 0;max-width:22ch;">El motor real: vender el <span style="color:#FED35D;">siguiente producto</span> a quien ya es cliente</h2>
+    <p style="margin:16px 0 0;max-width:760px;font-size:16px;line-height:1.6;color:rgba(255,255,255,.78);">Todos los clientes tienen al menos un producto activo; la penetración (productos por cliente) es el crecimiento más rentable y defensible.</p>
+
+    <div data-stagger style="display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:40px;">
+      <div style="flex:1;min-width:150px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:18px 16px;text-align:center;"><div style="font-size:12px;color:rgba(255,255,255,.5);font-weight:600;">PASO 1</div><div style="font-size:15.5px;font-weight:700;color:#fff;margin-top:6px;">ERP contable</div></div>
+      <div style="font-size:22px;color:#00ACFF;font-weight:800;">→</div>
+      <div style="flex:1;min-width:150px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:18px 16px;text-align:center;"><div style="font-size:12px;color:rgba(255,255,255,.5);font-weight:600;">PASO 2</div><div style="font-size:15.5px;font-weight:700;color:#fff;margin-top:6px;">Facturación electrónica</div></div>
+      <div style="font-size:22px;color:#00ACFF;font-weight:800;">→</div>
+      <div style="flex:1;min-width:150px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:18px 16px;text-align:center;"><div style="font-size:12px;color:rgba(255,255,255,.5);font-weight:600;">PASO 3</div><div style="font-size:15.5px;font-weight:700;color:#fff;margin-top:6px;">Nómina electrónica</div></div>
+      <div style="font-size:22px;color:#00ACFF;font-weight:800;">→</div>
+      <div style="flex:1;min-width:150px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:18px 16px;text-align:center;"><div style="font-size:12px;color:rgba(255,255,255,.5);font-weight:600;">PASO 4</div><div style="font-size:15.5px;font-weight:700;color:#fff;margin-top:6px;">Módulos / complementos</div></div>
+      <div style="font-size:22px;color:#FED35D;font-weight:800;">↑</div>
+      <div style="flex:1;min-width:150px;background:rgba(254,211,93,.16);border:1px solid rgba(254,211,93,.4);border-radius:14px;padding:18px 16px;text-align:center;"><div style="font-size:12px;color:#FED35D;font-weight:700;">UP-SELL</div><div style="font-size:15.5px;font-weight:700;color:#fff;margin-top:6px;">Up-sell de plan</div></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:24px;margin-top:32px;align-items:start;">
+      <div>
+        <div style="font-size:14px;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:12px;">Matriz Next Best Product — disparador por dolor</div>
+        <div style="overflow-x:auto;border-radius:14px;border:1px solid rgba(255,255,255,.12);">
+          <table style="width:100%;border-collapse:collapse;font-size:14px;min-width:520px;">
+            <thead><tr style="background:rgba(0,172,255,.16);color:#fff;text-align:left;">
+              <th style="padding:13px 16px;font-weight:600;">Cliente tiene…</th>
+              <th style="padding:13px 16px;font-weight:600;">Siguiente producto</th>
+              <th style="padding:13px 16px;font-weight:600;">Disparador (dolor)</th>
+            </tr></thead>
+            <tbody data-rows style="color:rgba(255,255,255,.9);">
+              <tr style="background:rgba(255,255,255,.03);"><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.08);">Solo ERP</td><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.08);color:#00ACFF;font-weight:600;">Facturación electrónica</td><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.08);">Obligatoriedad DIAN, evitar reprocesos</td></tr>
+              <tr style="background:rgba(255,255,255,.06);"><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.08);">ERP + Facturación</td><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.08);color:#00ACFF;font-weight:600;">Nómina electrónica</td><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.08);">Cumplimiento laboral, automatizar liquidación</td></tr>
+              <tr style="background:rgba(255,255,255,.03);"><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.08);">ERP + Fact. + Nómina</td><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.08);color:#00ACFF;font-weight:600;">Módulos (inventario, POS…)</td><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.08);">Eficiencia operativa, datos en un solo lugar</td></tr>
+              <tr style="background:rgba(255,255,255,.06);"><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.08);">Base consolidada</td><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.08);color:#FED35D;font-weight:600;">Up-sell de plan</td><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.08);">Crecimiento: más usuarios / documentos</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:28px 28px;backdrop-filter:blur(6px);position:relative;overflow:hidden;">
+        <div style="position:absolute;top:-30px;right:-20px;width:120px;height:120px;border-radius:50%;border:1.5px solid rgba(0,172,255,.3);"></div>
+        <div style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#00ACFF;">KPI que importa</div>
+        <div style="font-size:46px;font-weight:800;color:#FED35D;letter-spacing:-0.02em;margin-top:14px;">PPC ↑</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.6);">productos por cliente</div>
+        <p style="margin:16px 0 0;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.82);">Mover la base de <strong style="color:#fff;">1,x → 2,x</strong> productos/cliente es crecimiento que no depende de demanda nueva. Las campañas outbound se segmentan por gap de producto (ej. "ERP sin Facturación" = lista caliente de cumplimiento).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="position:relative;overflow:hidden;background:#fff;color:#16293B;padding:108px 24px;">
+  <div data-wm aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;"><div style="position:absolute;top:36px;right:-300px;width:660px;height:660px;border-radius:50%;border:36px solid rgba(0,172,255,.10);animation:wmFloatB 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;top:70px;right:352px;width:120px;height:120px;border-radius:50%;border:18px solid rgba(0,172,255,.13);animation:wmFloatB 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;top:238px;right:392px;width:62px;height:62px;border-radius:50%;border:12px solid rgba(0,172,255,.15);animation:wmFloatB 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;top:-122px;left:118px;width:252px;height:252px;border-radius:50%;border:32px solid rgba(0,172,255,.11);animation:wmFloatA 9s ease-in-out -5s infinite;will-change:transform;"></div><div style="position:absolute;bottom:-168px;left:-132px;width:392px;height:392px;border-radius:50%;border:36px solid rgba(254,211,93,.18);animation:wmFloatB 14s ease-in-out -6s infinite;will-change:transform;"></div><div style="position:absolute;bottom:206px;left:198px;width:92px;height:92px;border-radius:50%;border:15px solid rgba(254,211,93,.22);animation:wmFloatB 14s ease-in-out -6s infinite;will-change:transform;"></div></div>
+  <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease;max-width:1180px;margin:0 auto;position:relative;z-index:2;">
+    <div style="font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#00ACFF;">Palanca financiera · descuento y ticket</div>
+    <h2 style="font-size:clamp(28px,4vw,46px);font-weight:700;letter-spacing:-0.01em;line-height:1.1;margin:14px 0 0;max-width:20ch;">El descuento es <span style="color:#00ACFF;">margen</span>: gobernarlo vale ventas</h2>
+    <p style="margin:16px 0 0;max-width:760px;font-size:16px;line-height:1.6;color:#5E7388;">El ticket de $600K es <strong style="color:#16293B;">después</strong> de un 10% de descuento (precio lista implícito ≈ $667K). Descuento máximo permitido: <strong style="color:#16293B;">20%</strong>.</p>
+
+    <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:24px;margin-top:40px;align-items:start;">
+      <div style="overflow-x:auto;border-radius:16px;border:1px solid #E3EDF5;">
+        <table style="width:100%;border-collapse:collapse;font-size:14.5px;min-width:480px;">
+          <thead><tr style="background:#0B2A4A;color:#fff;text-align:left;">
+            <th style="padding:14px 18px;font-weight:600;">Descuento prom.</th>
+            <th style="padding:14px 18px;font-weight:600;">Ticket neto</th>
+            <th style="padding:14px 18px;font-weight:600;">Ventas para $400M</th>
+            <th style="padding:14px 18px;font-weight:600;">Efecto</th>
+          </tr></thead>
+          <tbody data-rows>
+            <tr style="background:#EAF7FF;"><td style="padding:15px 18px;border-top:1px solid #E3EDF5;font-weight:700;color:#23B58A;">8%</td><td style="padding:15px 18px;border-top:1px solid #E3EDF5;font-weight:600;">$613K</td><td style="padding:15px 18px;border-top:1px solid #E3EDF5;font-weight:700;color:#0B2A4A;">652</td><td style="padding:15px 18px;border-top:1px solid #E3EDF5;color:#23B58A;font-weight:600;">−15 ventas o +margen</td></tr>
+            <tr style="background:#fff;"><td style="padding:14px 18px;border-top:1px solid #E3EDF5;">10% (hoy)</td><td style="padding:14px 18px;border-top:1px solid #E3EDF5;">$600K</td><td style="padding:14px 18px;border-top:1px solid #E3EDF5;">667</td><td style="padding:14px 18px;border-top:1px solid #E3EDF5;color:#5E7388;">Referencia</td></tr>
+            <tr style="background:#fff;"><td style="padding:14px 18px;border-top:1px solid #E3EDF5;">12%</td><td style="padding:14px 18px;border-top:1px solid #E3EDF5;">$587K</td><td style="padding:14px 18px;border-top:1px solid #E3EDF5;">682</td><td style="padding:14px 18px;border-top:1px solid #E3EDF5;color:#E8746B;font-weight:600;">+15 ventas para igualar</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="background:#0B2A4A;border-radius:16px;padding:28px 28px;color:#fff;">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#00ACFF;">Reglas de gobernanza</div>
+        <ul style="margin:16px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:13px;">
+          <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.5;color:rgba(255,255,255,.88);"><span style="color:#00ACFF;font-weight:800;">›</span>Descuento por excepción, no por default.</li>
+          <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.5;color:rgba(255,255,255,.88);"><span style="color:#00ACFF;font-weight:800;">›</span>Atado a cross-sell/bundle y a cierre.</li>
+          <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.5;color:rgba(255,255,255,.88);"><span style="color:#00ACFF;font-weight:800;">›</span>Tablero de descuento por asesor (quien "compra" ventas al 20% se ve).</li>
+          <li style="display:flex;gap:11px;font-size:14.5px;line-height:1.5;color:rgba(255,255,255,.88);"><span style="color:#FED35D;font-weight:800;">›</span>Protege margen y mejora el mix de rentabilidad.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="position:relative;overflow:hidden;color:#fff;background:linear-gradient(180deg,#072039,#0B2A4A);padding:108px 24px;">
+  <div data-wm aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;"><div style="position:absolute;top:-150px;left:-170px;width:380px;height:380px;border-radius:50%;border:60px solid rgba(254,211,93,.42);animation:wmFloatA 11s ease-in-out -2s infinite;will-change:transform;"></div><div style="position:absolute;bottom:-160px;right:-130px;width:320px;height:320px;border-radius:50%;border:48px solid rgba(0,172,255,.42);animation:wmFloatB 13s ease-in-out -5s infinite;will-change:transform;"></div></div>
+  <div style="position:absolute;top:40px;left:-90px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(0,172,255,.15),transparent 64%);pointer-events:none;"></div>
+  <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease;max-width:1180px;margin:0 auto;position:relative;z-index:2;">
+    <div style="font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#00ACFF;">Equilibrar el mix de canales</div>
+    <h2 style="font-size:clamp(28px,4vw,46px);font-weight:700;letter-spacing:-0.01em;line-height:1.1;margin:14px 0 0;max-width:22ch;">Inbound y referidos son oro — pero el <span style="color:#FED35D;">motor</span> debe ser controlable</h2>
+
+    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:24px;margin-top:40px;align-items:start;">
+      <div style="overflow-x:auto;border-radius:14px;border:1px solid rgba(255,255,255,.12);">
+        <table style="width:100%;border-collapse:collapse;font-size:14px;min-width:520px;">
+          <thead><tr style="background:rgba(0,172,255,.16);color:#fff;text-align:left;">
+            <th style="padding:13px 16px;font-weight:600;">Canal</th>
+            <th style="padding:13px 16px;font-weight:600;">Mix hoy</th>
+            <th style="padding:13px 16px;font-weight:600;">Mix objetivo</th>
+            <th style="padding:13px 16px;font-weight:600;">Rol estratégico</th>
+          </tr></thead>
+          <tbody data-rows style="color:rgba(255,255,255,.9);">
+            <tr style="background:rgba(255,255,255,.03);"><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.08);">Inbound (entrantes)</td><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.08);">30%</td><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.08);">25%</td><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.08);">Cierre rápido · speed-to-lead</td></tr>
+            <tr style="background:rgba(0,172,255,.1);"><td style="padding:14px 16px;border-top:1px solid rgba(255,255,255,.08);font-weight:700;color:#00ACFF;">Outbound</td><td style="padding:14px 16px;border-top:1px solid rgba(255,255,255,.08);font-weight:700;">40%</td><td style="padding:14px 16px;border-top:1px solid rgba(255,255,255,.08);font-weight:700;color:#FED35D;">50%</td><td style="padding:14px 16px;border-top:1px solid rgba(255,255,255,.08);font-weight:600;">Motor controlable y predecible</td></tr>
+            <tr style="background:rgba(255,255,255,.03);"><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.08);">Referidos</td><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.08);">30%</td><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.08);">25%</td><td style="padding:13px 16px;border-top:1px solid rgba(255,255,255,.08);">Alto valor · mayor trazabilidad</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:24px 24px 18px;">
+        <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.7);margin-bottom:20px;">Mix de canales · hoy vs objetivo</div>
+        <div data-bars="mix" style="display:flex;align-items:flex-end;justify-content:space-around;gap:14px;height:170px;">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;height:100%;justify-content:flex-end;"><div style="display:flex;align-items:flex-end;gap:5px;height:100%;width:100%;justify-content:center;"><div style="width:18px;height:60%;background:rgba(255,255,255,.3);border-radius:4px 4px 0 0;"></div><div style="width:18px;height:50%;background:#6FA8CC;border-radius:4px 4px 0 0;"></div></div><div style="font-size:11.5px;color:rgba(255,255,255,.6);text-align:center;">Inbound</div></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;height:100%;justify-content:flex-end;"><div style="display:flex;align-items:flex-end;gap:5px;height:100%;width:100%;justify-content:center;"><div style="width:18px;height:80%;background:rgba(0,172,255,.5);border-radius:4px 4px 0 0;"></div><div style="width:18px;height:100%;background:#00ACFF;border-radius:4px 4px 0 0;"></div></div><div style="font-size:11.5px;color:#fff;font-weight:600;text-align:center;">Outbound</div></div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;height:100%;justify-content:flex-end;"><div style="display:flex;align-items:flex-end;gap:5px;height:100%;width:100%;justify-content:center;"><div style="width:18px;height:60%;background:rgba(255,255,255,.3);border-radius:4px 4px 0 0;"></div><div style="width:18px;height:50%;background:#BCD9EE;border-radius:4px 4px 0 0;"></div></div><div style="font-size:11.5px;color:rgba(255,255,255,.6);text-align:center;">Referidos</div></div>
+        </div>
+        <div style="display:flex;gap:16px;justify-content:center;margin-top:16px;font-size:11.5px;color:rgba(255,255,255,.6);"><span style="display:flex;align-items:center;gap:6px;"><span style="width:11px;height:11px;border-radius:3px;background:rgba(255,255,255,.3);"></span>Hoy</span><span style="display:flex;align-items:center;gap:6px;"><span style="width:11px;height:11px;border-radius:3px;background:#00ACFF;"></span>Objetivo</span></div>
+      </div>
+    </div>
+
+    <div style="background:#EAF7FF;border-radius:14px;padding:18px 22px;margin-top:18px;color:#16293B;font-size:15px;line-height:1.55;">
+      <strong style="color:#0090DB;">Sobre referidos:</strong> pasar de "suerte" a sistema — pedido estructurado en el momento correcto (post-venta / onboarding exitoso), incentivo claro y trazabilidad.
+    </div>
+
+    <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:18px;margin-top:18px;align-items:center;">
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:28px 28px;backdrop-filter:blur(6px);">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#00ACFF;">Opinión senior</div>
+        <p style="margin:12px 0 0;font-size:16.5px;line-height:1.55;color:rgba(255,255,255,.9);">Depender de inbound + referidos es un número <strong style="color:#E8746B;">frágil</strong>: si baja la demanda entrante, no tengo palanca. La meta no es reducir su valor, sino <strong style="color:#fff;">crecer el tramo que yo gobierno</strong>.</p>
+      </div>
+      <div style="text-align:center;background:linear-gradient(135deg,rgba(0,172,255,.16),rgba(254,211,93,.12));border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:30px 24px;">
+        <div style="font-size:13px;color:rgba(255,255,255,.65);font-weight:600;letter-spacing:.08em;text-transform:uppercase;">Outbound</div>
+        <div style="font-size:clamp(34px,5vw,52px);font-weight:800;letter-spacing:-0.02em;margin-top:8px;"><span style="color:#00ACFF;"><span data-count="40" data-suffix="%">0%</span></span> <span style="color:rgba(255,255,255,.5);">→</span> <span style="color:#FED35D;"><span data-count="50" data-suffix="%">0%</span></span></div>
+        <div style="font-size:13px;color:rgba(255,255,255,.6);margin-top:6px;">el tramo controlable</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="equipo" style="position:relative;overflow:hidden;background:#fff;color:#16293B;padding:108px 24px;">
+  <div data-wm aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;"><div style="position:absolute;top:36px;right:-300px;width:660px;height:660px;border-radius:50%;border:36px solid rgba(0,172,255,.10);animation:wmFloatB 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;top:70px;right:352px;width:120px;height:120px;border-radius:50%;border:18px solid rgba(0,172,255,.13);animation:wmFloatB 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;top:238px;right:392px;width:62px;height:62px;border-radius:50%;border:12px solid rgba(0,172,255,.15);animation:wmFloatB 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;top:-122px;left:118px;width:252px;height:252px;border-radius:50%;border:32px solid rgba(0,172,255,.11);animation:wmFloatA 9s ease-in-out -5s infinite;will-change:transform;"></div><div style="position:absolute;bottom:-168px;left:-132px;width:392px;height:392px;border-radius:50%;border:36px solid rgba(254,211,93,.18);animation:wmFloatB 14s ease-in-out -6s infinite;will-change:transform;"></div><div style="position:absolute;bottom:206px;left:198px;width:92px;height:92px;border-radius:50%;border:15px solid rgba(254,211,93,.22);animation:wmFloatB 14s ease-in-out -6s infinite;will-change:transform;"></div></div>
+  <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease;max-width:1180px;margin:0 auto;position:relative;z-index:2;">
+    <div style="font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#00ACFF;">Dispersión del equipo</div>
+    <h2 style="font-size:clamp(28px,4vw,46px);font-weight:700;letter-spacing:-0.01em;line-height:1.1;margin:14px 0 0;max-width:18ch;">Subir el piso <span style="color:#00ACFF;">sin bajar el techo</span></h2>
+    <p style="margin:16px 0 0;max-width:740px;font-size:16px;line-height:1.6;color:#5E7388;">Mejor asesor <strong style="color:#16293B;">200%</strong> · más bajo <strong style="color:#16293B;">40%</strong>. Que el número lo carguen unas estrellas es riesgo de persona clave.</p>
+
+    <div data-stagger style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:42px;">
+      <div style="background:#23B58A;border-radius:14px;padding:26px 24px;box-shadow:0 14px 34px rgba(35,181,138,.26);">
+        <div style="display:flex;align-items:center;justify-content:space-between;"><span style="font-size:17px;font-weight:700;color:#fff;">Alto</span><span style="font-size:14px;font-weight:700;color:#fff;">&gt;120%</span></div>
+        <p style="margin:12px 0 0;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.9);">Retos mayores, mentoría a otros y <strong style="color:#fff;">captura de su playbook</strong>.</p>
+      </div>
+      <div style="background:#00ACFF;border-radius:14px;padding:26px 24px;box-shadow:0 14px 34px rgba(0,172,255,.26);">
+        <div style="display:flex;align-items:center;justify-content:space-between;"><span style="font-size:17px;font-weight:700;color:#fff;">Medio</span><span style="font-size:14px;font-weight:700;color:#fff;">80–119%</span></div>
+        <p style="margin:12px 0 0;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.9);">Coaching táctico <strong style="color:#fff;">en el punto del embudo</strong> donde pierden.</p>
+      </div>
+      <div style="background:#FED35D;border-radius:14px;padding:26px 24px;box-shadow:0 14px 34px rgba(254,211,93,.34);">
+        <div style="display:flex;align-items:center;justify-content:space-between;"><span style="font-size:17px;font-weight:700;color:#0B2A4A;">Bajo</span><span style="font-size:14px;font-weight:700;color:#0B2A4A;">&lt;80%</span></div>
+        <p style="margin:12px 0 0;font-size:14.5px;line-height:1.55;color:rgba(11,42,74,.82);">Plan diario, escucha, roleplay y <strong style="color:#0B2A4A;">acompañamiento</strong>.</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:18px;align-items:center;">
+      <div style="background:#0B2A4A;border-radius:16px;padding:30px 30px;color:#fff;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:-30px;right:-20px;width:150px;height:150px;border-radius:50%;border:1.5px solid rgba(254,211,93,.25);"></div>
+        <div style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#00ACFF;">El premio (cuantificado)</div>
+        <p style="margin:12px 0 0;font-size:16.5px;line-height:1.55;color:rgba(255,255,255,.9);">Si 4 asesores del fondo pasan de 40% (17) a 80% (34 ventas) = <strong style="color:#FED35D;font-size:21px;"><span data-count="67" data-prefix="+" data-suffix=" ventas/mes">+0 ventas/mes</span> ≈ <span data-count="40" data-prefix="+$" data-suffix="M">+$0M</span></strong>, sin tocar a los mejores. Es el <strong style="color:#fff;">mayor pool de upside</strong> del equipo.</p>
+      </div>
+      <div style="border:1px solid #E3EDF5;border-radius:16px;padding:24px 24px 18px;">
+        <div style="font-size:13px;font-weight:600;color:#5E7388;margin-bottom:30px;">Distribución del equipo · subir el piso</div>
+        <div data-bars="team" style="display:flex;align-items:flex-end;gap:7px;height:150px;">
+          <div style="flex:1;background:linear-gradient(180deg,#FED35D,#f6c235);height:100%;border-radius:5px 5px 0 0;position:relative;"><span style="position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:700;color:#0B2A4A;"><span data-count="200" data-suffix="%">0%</span></span></div>
+          <div style="flex:1;background:#00ACFF;height:70%;border-radius:5px 5px 0 0;"></div>
+          <div style="flex:1;background:#00ACFF;height:62%;border-radius:5px 5px 0 0;"></div>
+          <div style="flex:1;background:#7EC8F5;height:54%;border-radius:5px 5px 0 0;"></div>
+          <div style="flex:1;background:#7EC8F5;height:48%;border-radius:5px 5px 0 0;"></div>
+          <div style="flex:1;background:#BCD9EE;height:40%;border-radius:5px 5px 0 0;position:relative;"><span style="position:absolute;top:-44px;left:50%;transform:translateX(-50%);font-size:15px;color:#23B58A;">↑</span></div>
+          <div style="flex:1;background:#BCD9EE;height:30%;border-radius:5px 5px 0 0;position:relative;"><span style="position:absolute;top:-58px;left:50%;transform:translateX(-50%);font-size:15px;color:#23B58A;">↑</span><span style="position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:700;color:#5E7388;"><span data-count="40" data-suffix="%">0%</span></span></div>
+        </div>
+        <div style="font-size:12px;color:#5E7388;margin-top:26px;text-align:center;">Estrella 200% · fondo 40% — el piso sube hacia ≥80%</div>
+      </div>
+    </div>
+
+    <div style="background:#EAF7FF;border-radius:14px;padding:18px 22px;margin-top:18px;font-size:15px;line-height:1.55;color:#16293B;">
+      <strong style="color:#0090DB;">Rampa de nuevos:</strong> parte de la dispersión es estructural (asesores en su primer mes). Planeo con la curva <strong>M1 ≈ 45% · M2 ≈ 70% · M3 ≈ 100%</strong> y la acorto con onboarding estructurado y base curada.
+    </div>
+  </div>
+</section>
+
+<section style="position:relative;overflow:hidden;color:#fff;background:linear-gradient(180deg,#0B2A4A,#072039);padding:108px 24px;">
+  <div data-wm aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;"><div style="position:absolute;top:-150px;left:-150px;width:300px;height:300px;border-radius:50%;border:46px solid rgba(0,172,255,.42);animation:wmFloatA 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;top:96px;left:286px;width:118px;height:118px;border-radius:50%;border:22px solid rgba(0,172,255,.42);animation:wmFloatA 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;top:196px;left:138px;width:64px;height:64px;border-radius:50%;border:14px solid rgba(0,172,255,.55);animation:wmFloatA 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;bottom:-170px;right:-150px;width:340px;height:340px;border-radius:50%;border:52px solid rgba(0,172,255,.42);animation:wmFloatB 14s ease-in-out -6s infinite;will-change:transform;"></div></div>
+  <div style="position:absolute;bottom:40px;right:-90px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(0,172,255,.15),transparent 64%);pointer-events:none;"></div>
+  <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease;max-width:1180px;margin:0 auto;position:relative;z-index:2;">
+    <div style="font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#00ACFF;">Método de seguimiento y feedback</div>
+    <h2 style="font-size:clamp(28px,4vw,46px);font-weight:700;letter-spacing:-0.01em;line-height:1.1;margin:14px 0 0;max-width:22ch;">Gestionar desde el <span style="color:#FED35D;">embudo</span>, no desde la presión del cierre</h2>
+
+    <div data-stagger style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:42px;">
+      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:26px 26px;">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#00ACFF;">Resultado</div>
+        <ul style="margin:16px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:11px;">
+          <li style="display:flex;gap:10px;font-size:14.5px;line-height:1.45;color:rgba(255,255,255,.85);"><span style="color:#00ACFF;">•</span>Ventas y cumplimiento</li>
+          <li style="display:flex;gap:10px;font-size:14.5px;line-height:1.45;color:rgba(255,255,255,.85);"><span style="color:#00ACFF;">•</span>Ticket</li>
+          <li style="display:flex;gap:10px;font-size:14.5px;line-height:1.45;color:rgba(255,255,255,.85);"><span style="color:#00ACFF;">•</span>Mix por canal</li>
+          <li style="display:flex;gap:10px;font-size:14.5px;line-height:1.45;color:rgba(255,255,255,.85);"><span style="color:#00ACFF;">•</span>Descuento promedio</li>
+          <li style="display:flex;gap:10px;font-size:14.5px;line-height:1.45;color:rgba(255,255,255,.85);"><span style="color:#FED35D;">•</span>Productos por cliente (PPC)</li>
+        </ul>
+      </div>
+      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:26px 26px;">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#00ACFF;">Gestión <span style="color:rgba(255,255,255,.5);">(leading)</span></div>
+        <ul style="margin:16px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:11px;">
+          <li style="display:flex;gap:10px;font-size:14.5px;line-height:1.45;color:rgba(255,255,255,.85);"><span style="color:#00ACFF;">•</span>Registros trabajados</li>
+          <li style="display:flex;gap:10px;font-size:14.5px;line-height:1.45;color:rgba(255,255,255,.85);"><span style="color:#00ACFF;">•</span>Contactabilidad</li>
+          <li style="display:flex;gap:10px;font-size:14.5px;line-height:1.45;color:rgba(255,255,255,.85);"><span style="color:#00ACFF;">•</span>Conversión sobre contacto</li>
+          <li style="display:flex;gap:10px;font-size:14.5px;line-height:1.45;color:rgba(255,255,255,.85);"><span style="color:#00ACFF;">•</span>Propuestas enviadas</li>
+          <li style="display:flex;gap:10px;font-size:14.5px;line-height:1.45;color:rgba(255,255,255,.85);"><span style="color:#00ACFF;">•</span>Cierre sobre propuesta</li>
+        </ul>
+      </div>
+      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:26px 26px;">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#00ACFF;">Calidad <span style="color:rgba(255,255,255,.5);">(habilidad)</span></div>
+        <ul style="margin:16px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:11px;">
+          <li style="display:flex;gap:10px;font-size:14.5px;line-height:1.45;color:rgba(255,255,255,.85);"><span style="color:#00ACFF;">•</span>Apertura y diagnóstico</li>
+          <li style="display:flex;gap:10px;font-size:14.5px;line-height:1.45;color:rgba(255,255,255,.85);"><span style="color:#00ACFF;">•</span>Argumentación de valor</li>
+          <li style="display:flex;gap:10px;font-size:14.5px;line-height:1.45;color:rgba(255,255,255,.85);"><span style="color:#00ACFF;">•</span>Manejo de objeciones</li>
+          <li style="display:flex;gap:10px;font-size:14.5px;line-height:1.45;color:rgba(255,255,255,.85);"><span style="color:#00ACFF;">•</span>Próximo paso claro</li>
+          <li style="display:flex;gap:10px;font-size:14.5px;line-height:1.45;color:rgba(255,255,255,.85);"><span style="color:#FED35D;">•</span>Lectura de gap de producto</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="background:rgba(0,172,255,.1);border:1px solid rgba(0,172,255,.28);border-radius:16px;padding:26px 28px;margin-top:18px;">
+      <p style="margin:0;font-size:17px;line-height:1.5;color:#fff;">El embudo dice <strong style="color:#00ACFF;">dónde intervenir</strong> — actividad, contacto, habilidad, propuesta o cierre. <strong style="color:#FED35D;">Coaching quirúrgico, no genérico.</strong></p>
+    </div>
+
+    <div data-stagger style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px;">
+      <div style="border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:26px 26px;">
+        <div style="font-size:15px;font-weight:700;color:#fff;">Junior — <span style="color:#00ACFF;">más estructura</span></div>
+        <p style="margin:10px 0 0;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.78);">Revisión diaria de actividad, guiones, roleplay, acompañamiento en llamada, metas de aprendizaje. Feedback puntual y repetible.</p>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:26px 26px;">
+        <div style="font-size:15px;font-weight:700;color:#fff;">Senior — <span style="color:#FED35D;">más profundidad</span></div>
+        <p style="margin:10px 0 0;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.78);">Oportunidades complejas, retos de ticket/rentabilidad, optimización de discurso, mentoría, playbooks. Feedback por reto, no por control.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="roadmap" style="position:relative;overflow:hidden;background:#fff;color:#16293B;padding:108px 24px;">
+  <div data-wm aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;"><div style="position:absolute;top:36px;right:-300px;width:660px;height:660px;border-radius:50%;border:36px solid rgba(0,172,255,.10);animation:wmFloatB 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;top:70px;right:352px;width:120px;height:120px;border-radius:50%;border:18px solid rgba(0,172,255,.13);animation:wmFloatB 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;top:238px;right:392px;width:62px;height:62px;border-radius:50%;border:12px solid rgba(0,172,255,.15);animation:wmFloatB 12s ease-in-out -3s infinite;will-change:transform;"></div><div style="position:absolute;top:-122px;left:118px;width:252px;height:252px;border-radius:50%;border:32px solid rgba(0,172,255,.11);animation:wmFloatA 9s ease-in-out -5s infinite;will-change:transform;"></div><div style="position:absolute;bottom:-168px;left:-132px;width:392px;height:392px;border-radius:50%;border:36px solid rgba(254,211,93,.18);animation:wmFloatB 14s ease-in-out -6s infinite;will-change:transform;"></div><div style="position:absolute;bottom:206px;left:198px;width:92px;height:92px;border-radius:50%;border:15px solid rgba(254,211,93,.22);animation:wmFloatB 14s ease-in-out -6s infinite;will-change:transform;"></div></div>
+  <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease;max-width:1180px;margin:0 auto;position:relative;z-index:2;">
+    <div style="font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#00ACFF;">Roadmap 90 días + riesgos</div>
+    <h2 style="font-size:clamp(28px,4vw,46px);font-weight:700;letter-spacing:-0.01em;line-height:1.1;margin:14px 0 0;max-width:20ch;">Roadmap de 90 días y <span style="color:#00ACFF;">control de riesgos</span></h2>
+
+    <div data-stagger style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:44px;">
+      <div style="border:1px solid #E3EDF5;border-radius:16px;padding:28px 26px;">
+        <div style="display:flex;align-items:center;gap:12px;"><span style="width:36px;height:36px;border-radius:10px;background:#00ACFF;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;">1</span><div><div style="font-size:16px;font-weight:700;color:#0B2A4A;">Julio</div><div style="font-size:12.5px;color:#00ACFF;font-weight:600;">Ordenar y enfocar</div></div></div>
+        <ul style="margin:18px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;">
+          <li style="display:flex;gap:9px;font-size:14px;line-height:1.45;color:#5E7388;"><span style="color:#00ACFF;font-weight:800;">›</span>Validar meta por asesor</li>
+          <li style="display:flex;gap:9px;font-size:14px;line-height:1.45;color:#5E7388;"><span style="color:#00ACFF;font-weight:800;">›</span>Auditar base y campañas</li>
+          <li style="display:flex;gap:9px;font-size:14px;line-height:1.45;color:#5E7388;"><span style="color:#00ACFF;font-weight:800;">›</span>Tablero diario</li>
+          <li style="display:flex;gap:9px;font-size:14px;line-height:1.45;color:#5E7388;"><span style="color:#00ACFF;font-weight:800;">›</span>Matriz producto-cliente (NBP)</li>
+          <li style="display:flex;gap:9px;font-size:14px;line-height:1.45;color:#5E7388;"><span style="color:#00ACFF;font-weight:800;">›</span>Capturar playbook del top</li>
+        </ul>
+      </div>
+      <div style="border:1px solid #FED35D;border-radius:16px;padding:28px 26px;background:linear-gradient(180deg,#FFFBEF,#fff);">
+        <div style="display:flex;align-items:center;gap:12px;"><span style="width:36px;height:36px;border-radius:10px;background:#FED35D;color:#072039;display:flex;align-items:center;justify-content:center;font-weight:800;">2</span><div><div style="font-size:16px;font-weight:700;color:#0B2A4A;">Agosto <span style="font-size:12px;color:#5E7388;font-weight:600;">· 19 días</span></div><div style="font-size:12.5px;color:#0090DB;font-weight:600;">Mejorar conversión</div></div></div>
+        <ul style="margin:18px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;">
+          <li style="display:flex;gap:9px;font-size:14px;line-height:1.45;color:#5E7388;"><span style="color:#0090DB;font-weight:800;">›</span>Cadencia multicanal</li>
+          <li style="display:flex;gap:9px;font-size:14px;line-height:1.45;color:#5E7388;"><span style="color:#0090DB;font-weight:800;">›</span>Pitch por dolor/gap</li>
+          <li style="display:flex;gap:9px;font-size:14px;line-height:1.45;color:#5E7388;"><span style="color:#0090DB;font-weight:800;">›</span>Escucha semanal</li>
+          <li style="display:flex;gap:9px;font-size:14px;line-height:1.45;color:#5E7388;"><span style="color:#0090DB;font-weight:800;">›</span>Mentorías internas</li>
+          <li style="display:flex;gap:9px;font-size:14px;line-height:1.45;color:#5E7388;"><span style="color:#FED35D;font-weight:800;">›</span>Front-load por festivos</li>
+        </ul>
+      </div>
+      <div style="border:1px solid #E3EDF5;border-radius:16px;padding:28px 26px;">
+        <div style="display:flex;align-items:center;gap:12px;"><span style="width:36px;height:36px;border-radius:10px;background:#0B2A4A;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;">3</span><div><div style="font-size:16px;font-weight:700;color:#0B2A4A;">Septiembre</div><div style="font-size:12.5px;color:#00ACFF;font-weight:600;">Escalar y estabilizar</div></div></div>
+        <ul style="margin:18px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;">
+          <li style="display:flex;gap:9px;font-size:14px;line-height:1.45;color:#5E7388;"><span style="color:#00ACFF;font-weight:800;">›</span>Outbound a 50%</li>
+          <li style="display:flex;gap:9px;font-size:14px;line-height:1.45;color:#5E7388;"><span style="color:#00ACFF;font-weight:800;">›</span>Cohortes por gap de producto</li>
+          <li style="display:flex;gap:9px;font-size:14px;line-height:1.45;color:#5E7388;"><span style="color:#00ACFF;font-weight:800;">›</span>Piso del equipo ≥80%</li>
+          <li style="display:flex;gap:9px;font-size:14px;line-height:1.45;color:#5E7388;"><span style="color:#00ACFF;font-weight:800;">›</span>Formalizar playbook + referidos</li>
+          <li style="display:flex;gap:9px;font-size:14px;line-height:1.45;color:#5E7388;"><span style="color:#FED35D;font-weight:800;">›</span>Metas Q4</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#5E7388;margin:42px 0 16px;">Registro de riesgos &amp; mitigación</div>
+    <div data-stagger style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;">
+      <div style="background:#EAF7FF;border-radius:12px;padding:18px 20px;"><div style="font-size:14px;font-weight:700;color:#E8746B;">Dependencia de pocos top</div><div style="font-size:13.5px;color:#16293B;margin-top:5px;line-height:1.45;">→ Captura de playbook + subir piso</div></div>
+      <div style="background:#EAF7FF;border-radius:12px;padding:18px 20px;"><div style="font-size:14px;font-weight:700;color:#E8746B;">Calidad/volumen de base</div><div style="font-size:13.5px;color:#16293B;margin-top:5px;line-height:1.45;">→ Scoring acordado + SLA con Planeación</div></div>
+      <div style="background:#EAF7FF;border-radius:12px;padding:18px 20px;"><div style="font-size:14px;font-weight:700;color:#E8746B;">Agosto comprimido</div><div style="font-size:13.5px;color:#16293B;margin-top:5px;line-height:1.45;">→ Front-load + referidos cargados en julio</div></div>
+      <div style="background:#EAF7FF;border-radius:12px;padding:18px 20px;"><div style="font-size:14px;font-weight:700;color:#E8746B;">Rampa de novatos</div><div style="font-size:13.5px;color:#16293B;margin-top:5px;line-height:1.45;">→ Onboarding y metas escalonadas</div></div>
+      <div style="background:#EAF7FF;border-radius:12px;padding:18px 20px;"><div style="font-size:14px;font-weight:700;color:#E8746B;">Erosión de margen</div><div style="font-size:13.5px;color:#16293B;margin-top:5px;line-height:1.45;">→ Gobernanza de descuento</div></div>
+      <div style="background:#EAF7FF;border-radius:12px;padding:18px 20px;"><div style="font-size:14px;font-weight:700;color:#E8746B;">Fatiga de base</div><div style="font-size:13.5px;color:#16293B;margin-top:5px;line-height:1.45;">→ Tope de toques y mensaje por gap</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="position:relative;overflow:hidden;color:#fff;background:linear-gradient(96deg,#061d35 0%,rgba(6,29,53,.92) 32%,rgba(7,32,57,.8) 64%,rgba(7,32,57,.62) 100%),linear-gradient(0deg,rgba(6,29,53,.55) 0%,rgba(6,29,53,0) 46%),url('hero-home-office.png');background-size:cover;background-position:center;padding:110px 24px;">
+  <div style="position:absolute;top:-120px;right:-70px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle at 32% 32%,rgba(0,172,255,.30),rgba(0,172,255,0) 64%);filter:blur(6px);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-160px;left:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(254,211,93,.13),rgba(254,211,93,0) 62%);pointer-events:none;"></div>
+  <img class="brand-mark" data-logo src="siigo-logo-azul.png" alt="Siigo" style="top:120px;right:5.5vw;width:clamp(220px,22vw,360px);height:auto;filter:drop-shadow(0 8px 26px rgba(0,0,0,.35));">
+
+  <div data-reveal style="opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease;max-width:1180px;margin:0 auto;position:relative;z-index:4;">
+    <div style="font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#00ACFF;">Cierre ejecutivo</div>
+    <h2 style="font-size:clamp(36px,6vw,72px);font-weight:800;line-height:1.04;letter-spacing:-0.02em;margin:18px 0 0;">De la <span style="color:#00ACFF;">meta</span> al <span style="color:#FED35D;">motor</span></h2>
+    <p style="margin:24px 0 0;max-width:680px;font-size:clamp(16px,1.6vw,20px);line-height:1.6;color:rgba(255,255,255,.82);">El objetivo no es empujar al equipo a vender más, sino construir un sistema donde <strong style="color:#fff;">vender mejor</strong> sea consecuencia de foco, datos, método y acompañamiento.</p>
+
+    <div data-stagger style="display:flex;flex-wrap:wrap;gap:12px;margin-top:38px;">
+      <div style="flex:1;min-width:150px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:20px 18px;backdrop-filter:blur(6px);"><div style="font-size:24px;font-weight:800;color:#fff;letter-spacing:-0.01em;"><span data-count="667">0</span></div><div style="font-size:12.5px;color:rgba(255,255,255,.65);margin-top:3px;">ventas / mes</div></div>
+      <div style="flex:1;min-width:150px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:20px 18px;backdrop-filter:blur(6px);"><div style="font-size:24px;font-weight:800;color:#00ACFF;letter-spacing:-0.01em;"><span data-count="12" data-prefix="≥" data-suffix="%">≥0%</span></div><div style="font-size:12.5px;color:rgba(255,255,255,.65);margin-top:3px;">efectividad outbound</div></div>
+      <div style="flex:1;min-width:150px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:20px 18px;backdrop-filter:blur(6px);"><div style="font-size:24px;font-weight:800;color:#FED35D;letter-spacing:-0.01em;"><span data-count="50" data-suffix="%">0%</span></div><div style="font-size:12.5px;color:rgba(255,255,255,.65);margin-top:3px;">mix outbound</div></div>
+      <div style="flex:1;min-width:150px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:20px 18px;backdrop-filter:blur(6px);"><div style="font-size:24px;font-weight:800;color:#fff;letter-spacing:-0.01em;">PPC ↑</div><div style="font-size:12.5px;color:rgba(255,255,255,.65);margin-top:3px;">productos / cliente</div></div>
+      <div style="flex:1;min-width:150px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:20px 18px;backdrop-filter:blur(6px);"><div style="font-size:24px;font-weight:800;color:#fff;letter-spacing:-0.01em;"><span data-count="80" data-prefix="≥" data-suffix="%">≥0%</span></div><div style="font-size:12.5px;color:rgba(255,255,255,.65);margin-top:3px;">piso del equipo</div></div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#061d35;color:#fff;padding:40px 24px;">
+  <div style="max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+    <img src="siigo-logo-white.png" alt="Siigo" style="height:30px;width:auto;display:block;">
+    <div style="font-size:13.5px;color:rgba(255,255,255,.6);text-align:right;">Cross Selling Manager · Plan 90 días · Jul–Sep 2026</div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { ef: 12, reg: 12, contact: 60, mes: 'Julio' };
+
+  diasDe(mes){ return ({Julio:22, Agosto:19, Septiembre:22})[mes]; }
+
+  calc(){
+    const { ef, reg, contact, mes } = this.state;
+    const dias = this.diasDe(mes);
+    const registros_mes = 16 * reg * dias;
+    const contactos = registros_mes * (contact/100);
+    const ventas_outbound = Math.round(contactos * (ef/100));
+    const ventas_totales = ventas_outbound + 200 + 200;
+    const ingreso = ventas_totales * 600000;
+    const meta_ok = ingreso >= 400000000;
+    const mix = ventas_totales ? ventas_outbound/ventas_totales : 0;
+    return { dias, registros_mes, contactos, ventas_outbound, ventas_totales, ingreso, meta_ok, mix };
+  }
+
+  set(k, v){ this.setState({ [k]: v }); }
+  preset(o){ this.setState(o); }
+
+  renderVals(){
+    const c = this.calc();
+    const co = n => Math.round(n).toLocaleString('es-CO');
+    const fM = n => '$' + (n/1e6).toFixed(0) + 'M';
+    const deficit = 400000000 - c.ingreso;
+    const faltan = Math.max(0, 667 - c.ventas_totales);
+    const progress = Math.min(100, (c.ventas_totales/667)*100);
+    const statusText = c.meta_ok
+      ? '✅ Meta cubierta · ' + fM(c.ingreso)
+      : '⚠️ Faltan ' + faltan + ' ventas (−' + fM(deficit) + ')';
+    return {
+      ef: this.state.ef, reg: this.state.reg, contact: this.state.contact, mes: this.state.mes,
+      onEf: e => this.set('ef', +e.target.value),
+      onReg: e => this.set('reg', +e.target.value),
+      onContact: e => this.set('contact', +e.target.value),
+      onMes: e => this.set('mes', e.target.value),
+      presetHoy: () => this.preset({ ef:10, reg:10 }),
+      presetBase: () => this.preset({ ef:12, reg:11 }),
+      presetMotor: () => this.preset({ ef:12, reg:14 }),
+      dias: c.dias,
+      registrosMes: co(c.registros_mes),
+      contactos: co(c.contactos),
+      ventasOutbound: c.ventas_outbound,
+      ventasTotales: c.ventas_totales,
+      ingreso: '$' + co(c.ingreso),
+      ingresoM: fM(c.ingreso),
+      metaOk: c.meta_ok,
+      statusText,
+      statusBg: c.meta_ok ? 'rgba(35,181,138,.18)' : 'rgba(232,116,107,.18)',
+      statusBorder: c.meta_ok ? 'rgba(35,181,138,.5)' : 'rgba(232,116,107,.5)',
+      statusColor: c.meta_ok ? '#7ce0bf' : '#ffb3ac',
+      progressW: progress.toFixed(1) + '%',
+      progressBg: c.meta_ok ? '#23B58A' : '#FED35D',
+      mixLabel: 'Outbound = ' + Math.round(c.mix*100) + '% del total',
+    };
+  }
+
+  componentDidMount(){
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const fmt = (el, val) => {
+      const dec = parseInt(el.dataset.dec||'0');
+      const pre = el.dataset.prefix||'';
+      const suf = el.dataset.suffix||'';
+      return pre + val.toLocaleString('es-CO',{minimumFractionDigits:dec,maximumFractionDigits:dec}) + suf;
+    };
+    const animate = (el) => {
+      if(el.dataset.done) return; el.dataset.done = '1';
+      const target = parseFloat(el.dataset.count);
+      const finalText = fmt(el, target);
+      if(reduce){ el.textContent = finalText; return; }
+      let forced = false;
+      const dur = 1300, start = performance.now();
+      const tick = now => {
+        if(forced) return;
+        const t = Math.min(1,(now-start)/dur);
+        const e = 1-Math.pow(1-t,3);
+        el.textContent = fmt(el, target*e);
+        if(t<1) requestAnimationFrame(tick);
+        else el.textContent = finalText;
+      };
+      requestAnimationFrame(tick);
+      // guarantee the final value lands even where rAF is throttled
+      setTimeout(() => { forced = true; el.textContent = finalText; }, dur + 500);
+    };
+    // ---- prepare graph & card entrances: collapse animatable elements up front ----
+    const EASE = 'cubic-bezier(.22,1,.36,1)';
+    document.querySelectorAll('[data-bars]').forEach(c => {
+      const t = c.dataset.bars; let list = [];
+      if(t === 'proj') list = [...c.querySelectorAll(':scope > div')].map(col => col.children[1]).filter(Boolean);
+      else if(t === 'mix') list = [...c.querySelectorAll(':scope > div > div:first-child > div')];
+      else if(t === 'team') list = [...c.children];
+      c.__bars = list;
+      if(!reduce) list.forEach((b, i) => {
+        b.style.transformOrigin = 'bottom';
+        b.style.transition = 'transform .85s ' + EASE;
+        b.style.transitionDelay = (i * 55) + 'ms';
+        b.style.transform = 'scaleY(0)';
+      });
+    });
+    if(!reduce){
+      document.querySelectorAll('[data-stagger]').forEach(c => {
+        [...c.children].forEach(ch => {
+          ch.style.opacity = '0';
+          ch.style.transform = 'translateY(22px)';
+          ch.style.transition = 'opacity .6s ease, transform .65s ' + EASE;
+        });
+      });
+      document.querySelectorAll('[data-pop]').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'scale(.82) rotate(-7deg)';
+        el.style.transition = 'opacity .7s ease, transform .95s ' + EASE;
+      });
+      document.querySelectorAll('[data-rows]').forEach(tb => {
+        [...tb.querySelectorAll('tr')].forEach(r => {
+          r.style.opacity = '0';
+          r.style.transform = 'translateX(-16px)';
+          r.style.transition = 'opacity .5s ease, transform .6s ' + EASE;
+        });
+      });
+      document.querySelectorAll('[data-logo]').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px) scale(.93)';
+        el.style.transition = 'opacity .9s ease, transform 1s ' + EASE;
+      });
+    }
+    // After an entrance runs, guarantee the final state even where the compositor is throttled.
+    const snap = (el, styles, after) => setTimeout(() => { el.style.transition = 'none'; Object.assign(el.style, styles); }, after);
+
+    // ---- Per-element triggers. Each animated group fires once, only when IT enters view ----
+    // (rather than animating a whole tall section at once while its charts are still off-screen).
+    const playBars = (c) => {
+      (c.__bars || []).forEach((b, i) => {
+        if(reduce){ b.style.transform = 'none'; return; }
+        b.style.transform = 'scaleY(1)';
+        snap(b, { transform: 'scaleY(1)' }, 1150 + i * 55);
+      });
+    };
+    const playStagger = (c) => {
+      [...c.children].forEach((ch, i) => {
+        if(reduce){ ch.style.opacity = '1'; ch.style.transform = 'none'; return; }
+        const d = i * 75;
+        ch.style.transitionDelay = d + 'ms';
+        ch.style.opacity = '1';
+        ch.style.transform = 'none';
+        snap(ch, { opacity: '1', transform: 'none' }, 1250 + d);
+      });
+    };
+    const playPop = (el) => {
+      if(reduce){ el.style.opacity = '1'; el.style.transform = 'none'; return; }
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+      snap(el, { opacity: '1', transform: 'none' }, 1300);
+    };
+    const playLogo = (el) => {
+      if(reduce){ el.style.opacity = '1'; el.style.transform = 'none'; return; }
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+      snap(el, { opacity: '1', transform: 'none' }, 1400);
+    };
+    // Build tables row by row: each body row fades + slides in, staggered,
+    // so the table feels assembled as you reach it.
+    const playRows = (tb) => {
+      const rows = [...tb.querySelectorAll('tr')];
+      rows.forEach((r, i) => {
+        if(reduce){ r.style.opacity = '1'; r.style.transform = 'none'; return; }
+        const d = i * 95;
+        r.style.transitionDelay = d + 'ms';
+        r.style.opacity = '1';
+        r.style.transform = 'none';
+        snap(r, { opacity: '1', transform: 'none' }, 1300 + d);
+      });
+    };
+    // Draw the donut ring like a pen sweeping clockwise from the top,
+    // tracing each colored arc in sequence (inbound -> outbound -> referidos).
+    const playDonut = (c) => {
+      const segs = [...c.querySelectorAll('[data-seg]')];
+      if(reduce){ segs.forEach(s => s.style.strokeDashoffset = '0'); return; }
+      const dur = 1250, start = performance.now();
+      let forced = false;
+      const tick = now => {
+        if(forced) return;
+        const p = Math.min(1, (now - start) / dur);
+        segs.forEach(s => {
+          const len = parseFloat(s.dataset.len);
+          const a = parseFloat(s.dataset.start), b = parseFloat(s.dataset.end);
+          const lp = Math.min(1, Math.max(0, (p - a) / (b - a)));
+          s.style.strokeDashoffset = String(len * (1 - lp));
+        });
+        if(p < 1) requestAnimationFrame(tick);
+        else segs.forEach(s => s.style.strokeDashoffset = '0');
+      };
+      requestAnimationFrame(tick);
+      // guarantee the final drawn state even where the compositor is throttled
+      setTimeout(() => { forced = true; segs.forEach(s => s.style.strokeDashoffset = '0'); }, dur + 500);
+    };
+
+    // The section wrapper just FADES IN (never blank), triggered a touch early.
+    const fadeWrapper = (el) => {
+      if(el.dataset.faded) return; el.dataset.faded = '1';
+      if(reduce){ el.style.transition='none'; el.style.opacity='1'; el.style.transform='none'; return; }
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+      setTimeout(() => {
+        if(parseFloat(getComputedStyle(el).opacity) < 0.99){
+          el.style.transition = 'none'; el.style.opacity = '1'; el.style.transform = 'none';
+        }
+      }, 820);
+    };
+
+    // Build the list of individually-triggered animation groups.
+    const groups = [];
+    document.querySelectorAll('[data-count]').forEach(el => groups.push({ el, run: () => animate(el) }));
+    document.querySelectorAll('[data-bars]').forEach(el => groups.push({ el, run: () => playBars(el) }));
+    document.querySelectorAll('[data-stagger]').forEach(el => groups.push({ el, run: () => playStagger(el) }));
+    document.querySelectorAll('[data-pop]').forEach(el => groups.push({ el, run: () => playPop(el) }));
+    document.querySelectorAll('[data-donut]').forEach(el => groups.push({ el, run: () => playDonut(el) }));
+    document.querySelectorAll('[data-logo]').forEach(el => groups.push({ el, run: () => playLogo(el) }));
+    document.querySelectorAll('[data-rows]').forEach(el => groups.push({ el, run: () => playRows(el) }));
+
+    const check = () => {
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      // Fade section wrappers in early so nothing is ever blank.
+      document.querySelectorAll('[data-reveal]').forEach(el => {
+        if(el.dataset.faded) return;
+        const r = el.getBoundingClientRect();
+        if(r.top < vh*0.94 && r.bottom > 0) fadeWrapper(el);
+      });
+      // Fire each animation group only when the group itself is genuinely in view:
+      // its top has risen into the lower-middle of the viewport (≈72%) and it still
+      // sits on screen. Tall sections therefore animate their charts as you reach them.
+      groups.forEach(g => {
+        if(g.done) return;
+        const r = g.el.getBoundingClientRect();
+        if(r.top < vh*0.82 && r.bottom > vh*0.06){ g.done = true; g.run(); }
+      });
+    };
+
+    if(reduce){
+      document.querySelectorAll('[data-reveal]').forEach(el => { el.style.transition='none'; el.style.opacity='1'; el.style.transform='none'; });
+      groups.forEach(g => { g.done = true; g.run(); });
+      return;
+    }
+    this._check = check;
+    window.addEventListener('scroll', check, { passive:true });
+    window.addEventListener('resize', check, { passive:true });
+    requestAnimationFrame(() => { check(); requestAnimationFrame(check); });
+    // A couple of early re-checks in case the first frames were throttled. These only
+    // act on what is actually in view, so below-the-fold groups still wait for scroll.
+    [140, 500].forEach(ms => setTimeout(check, ms));
+  }
+
+  componentWillUnmount(){
+    if(this._check){ window.removeEventListener('scroll', this._check); window.removeEventListener('resize', this._check); }
+  }
+}
+</script>
+</body>
+</html>
